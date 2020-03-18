@@ -20,9 +20,16 @@
                 <li class="menu-title">Main</li>
 
                 <li>
-                    <a href="" class="waves-effect">
+                    <a href="/" class="waves-effect">
                         <i class="mdi mdi-airplay"></i>
-                        <span> Dashboard <span class="badge badge-pill badge-primary float-right">7</span></span>
+                        <span> Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/add" class="waves-effect">
+                        <i class="mdi mdi-account-multiple-plus "></i>
+                        <span> Add students </span>
                     </a>
                 </li>
 

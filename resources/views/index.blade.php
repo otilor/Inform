@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Zoter - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>{{ config('app.name','Laravel') }} by Gabriel Akinyosoye</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -55,7 +55,7 @@
                                     <div class="page-title-box">
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
-                                                <li class="breadcrumb-item"><a href="#">Zoter</a></li>
+                                            <li class="breadcrumb-item"><a href="#">{{ config('app.name', 'Laravel') }}</a></li>
                                                 <li class="breadcrumb-item active">Dashboard</li>
                                             </ol>
                                         </div>
@@ -76,7 +76,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer">
-                    © 2019 Inform by Gabriel Akinyosoye.
+                    © 2019 Inform by <a href="https://github.com/GabielFemi" target="_blank">Gabriel Akinyosoye.</a>
                 </footer>
 
             </div>
