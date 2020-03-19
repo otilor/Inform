@@ -71,17 +71,15 @@
 
                             <!--Add students form-->
                             <div class="px-3 pb-3">
-                                <form class="form-horizontal m-t-20" action="">
-            
+                            <form class="form-horizontal m-t-20" action="{{ route('add_student_phone_number') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    @include('inc.messages')
                                     <div class="form-group row">
                                         <div class="col-12">
-                                            <input class="form-control" type="phone" required="" placeholder="Phone number">
+                                            <input class="form-control" type="phone" required="" maxlength = "11" name = "phone_number" placeholder="Phone number">
                                         </div>
                                     </div>
-            
-                                    
-            
-                                   
+ 
             
                                     <div class="form-group text-center row m-t-20">
                                         <div class="col-12">
@@ -89,15 +87,15 @@
                                         </div>
                                     </div>
             
-                                    <div class="form-group m-t-10 mb-0 row">
-                                        <div class="col-sm-7 m-t-20">
-                                            <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> <small>Forgot your password ?</small></a>
-                                        </div>
-                                        <div class="col-sm-5 m-t-20">
-                                            <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a>
-                                        </div>
-                                    </div>
+                                    
                                 </form>
+                            </div>
+                            <div>
+                                <ul>
+                                    @foreach ($all_students as $application)
+                                    <li>{{ $application->phone_number }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                             
             

@@ -25,7 +25,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('add');
+        $all_students = Student::all();
+        
+        return view('add', compact('all_students', $all_students));
     }
 
     /**
@@ -36,9 +38,14 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'phone_number' => 'required|max:11|numeric'
+        ]);
         $store_student = new Student;
-        $store_student->phone_number;
+        $phone_number = $request->get('phone_number');
+        $store_student->phone_number = $phone_number;
         $store_student->save();
+        return redirect()->back()->with('success', 'Student phone number has been added');
     }
 
     /**

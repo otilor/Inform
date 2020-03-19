@@ -18,3 +18,4 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/add', 'AdminController@create');
+Route::post('/add', 'AdminController@store')->name('add_student_phone_number');
