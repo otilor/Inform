@@ -21,8 +21,8 @@
 
                 <li>
                     <a href="/" class="waves-effect">
-                        <i class="mdi mdi-airplay"></i>
-                        <span> Dashboard</span>
+                        <i class="mdi mdi-message-plus"></i>
+                        <span> Message</span>
                     </a>
                 </li>
 

@@ -56,18 +56,27 @@
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
                                             <li class="breadcrumb-item"><a href="#">{{ config('app.name', 'Laravel') }}</a></li>
-                                                <li class="breadcrumb-item active">Dashboard</li>
+                                                <li class="breadcrumb-item active">Message</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Dashboard</h4>
+                                        <div class="send_message">
+                                            <h4>Send Message to Class</h4>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                             <!-- end page title end breadcrumb -->
                             <div>
-                                Welcome, Favour
+                                Welcome, {{ Auth::user()->name }}
                             </div>    
+                            <form style = "box-sizing: border-box">
+                                <div>
+                                    <textarea id="textarea" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars."></textarea>
+                                </div>
+                            </form>
+
+                            
 
                         </div><!-- container -->
 

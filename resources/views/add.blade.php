@@ -91,11 +91,15 @@
                                 </form>
                             </div>
                             <div>
+                                @if (count($all_students) == 0)
+                                <p>There are no students. Start off by adding students</p>
+                                @else
                                 <ul>
                                     @foreach ($all_students as $application)
                                     <li>{{ $application->phone_number }}</li>
                                     @endforeach
                                 </ul>
+                                @endif
                             </div>
                             
             

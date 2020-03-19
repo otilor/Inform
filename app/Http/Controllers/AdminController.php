@@ -7,7 +7,9 @@ use App\Student;
 
 class AdminController extends Controller
 {
-    public function __coStudentModelnstruct()
+    
+
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -25,6 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
+        
         $all_students = Student::all();
         
         return view('add', compact('all_students', $all_students));
@@ -39,10 +42,10 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'phone_number' => 'required|max:11|numeric'
+            'phone_number' => 'bail|required|numeric|digits:11'
         ]);
         $store_student = new Student;
-        $phone_number = $request->get('phone_number');
+        $phone_number = $request->phone_number;
         $store_student->phone_number = $phone_number;
         $store_student->save();
         return redirect()->back()->with('success', 'Student phone number has been added');
