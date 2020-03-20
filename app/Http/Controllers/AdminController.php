@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Message;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -94,5 +97,25 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function send(Request $request)
+    {
+        
+        $request->validate([
+            'message' => 'required|min:10|max:255'
+        ]);
+        
+        $new_message  = new Message;
+        $new_message->message = $request->get('message');
+        $new_message->user_id  = Auth::user()->id;
+        
+        $new_message->save();
+        // if ($new_message->save();) {
+            # do the next tablecode...
+            // if that next table is successful then redirect else whatever      }
+        return redirect()->back()->with('success', 'Your message has been sent!');
+
+
     }
 }
