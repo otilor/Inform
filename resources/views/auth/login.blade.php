@@ -27,7 +27,7 @@
             <div class="card-body">
 
                 <div class="text-center">
-                    <a href="index.html" class="logo logo-admin"><img src="assets/images/e-logo.png" height="20" alt="logo"></a>
+                    <a href="/" class="logo logo-admin"><img src="assets/images/e-logo.png" height="20" alt="logo"></a>
                 </div>
 
                 <div class="px-3 pb-3">
@@ -70,11 +70,16 @@
                         </div>
 
                         <div class="form-group m-t-10 mb-0 row">
+
+                            @if (Route::has('password.reset'))
                             <div class="col-sm-7 m-t-20">
-                                <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> <small>Forgot your password ?</small></a>
+                                <a href="/password/reset" class="text-muted"><i class="mdi mdi-lock"></i> <small>{{ __('Forgot your password ?') }}</small></a>
                             </div>
+
+                            @endif
+
                             <div class="col-sm-5 m-t-20">
-                                <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a>
+                                <a href="/register" class="text-muted"><i class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a>
                             </div>
                         </div>
                     </form>
