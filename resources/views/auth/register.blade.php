@@ -32,8 +32,8 @@
                     </div>
 
                     <div class="p-3">
-                    <form class="form-horizontal" action="{{ route('register') }}" method="POST">
-                        {{ csrf_field() }}
+                        <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
                             <div class="form-group row">
                                 <div class="col-12">
@@ -41,9 +41,13 @@
                                 </div>
                             </div>
 
+                            @error('email')
+                                <strong>{{ $message }}</strong>
+                            @enderror
+
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input name = "username" class="form-control" type="text" required="" placeholder="Username">
+                                    <input name = "name" class="form-control" type="text" required="" placeholder="Username">
                                 </div>
                             </div>
 
@@ -70,7 +74,7 @@
 
                             <div class="form-group text-center row m-t-20">
                                 <div class="col-12">
-                                    <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Register</button>
+                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">{{ __('Register') }}</button>
                                 </div>
                             </div>
 

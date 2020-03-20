@@ -151,7 +151,7 @@ class AdminController extends Controller
         $phone_numbers[0]["phone_number"],
             array(
                 'from' => $twilio_number,
-                'body' => $message[0]["message"]
+                'body' => $message[0]["message"].' Sent by '. Auth::user()->name
             )
         )){
             
