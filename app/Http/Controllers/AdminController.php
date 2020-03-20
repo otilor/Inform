@@ -129,8 +129,8 @@ class AdminController extends Controller
         $message = Message::where('message',$request->get('message'))->select('message')->get()->toArray();
         //return $message;
         $phone_numbers = Student::all()->toArray();
-        //dd($phone_numbers);
-        //dd($message);
+        // dd($phone_numbers);
+        // dd($message);
 
 //Messaging REST API
     try {
