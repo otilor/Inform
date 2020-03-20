@@ -68,7 +68,7 @@
                             </div>
                             <!-- end page title end breadcrumb -->
                             <div>
-                                Welcome, {{ Auth::user()->name }}
+                                Welcome, {{ Auth::user()->name }}, You have sent  {{ count($all_messages) }} message so far.
                             </div>    
                             <form style = "box-sizing: border-box" action={{ route('send_message') }} method="POST">
                                 {{ csrf_field() }}

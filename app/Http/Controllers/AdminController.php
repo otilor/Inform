@@ -21,7 +21,9 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('index');
+        $all_messages = Message::where('user_id',Auth::user()->id)->get();
+
+        return view('index', compact('all_messages',$all_messages));
     }
     /**
      * Display a listing of the resource.
