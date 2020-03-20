@@ -126,9 +126,10 @@ class AdminController extends Controller
         # do the next tablecode...
         // if that next table is successful then redirect else whatever      }
 
-        $message = Message::where('message',$request->get('message'))->select('message')->get();
+        $message = Message::where('message',$request->get('message'))->select('message')->get()->toArray();
         //return $message;
-        $phone_numbers = Student::all('phone_number');
+        $phone_numbers = Student::all()->toArray();
+        //dd($phone_numbers);
 
 
 //Messaging REST API
@@ -141,11 +142,13 @@ class AdminController extends Controller
 
         // A Twilio number you own with SMS capabilities
         $twilio_number = "+12057934134";
-
+        
+        
         $client = new Client($account_sid, $auth_token);
         if($client->messages->create(
             // Where to send a text message (your cell phone?)
-        $phone_numbers[0],
+            
+        $phone_numbers[0]["phone_number"],
             array(
                 'from' => $twilio_number,
                 'body' => 'Testing my Twilio API'
@@ -161,7 +164,7 @@ class AdminController extends Controller
     }catch (\Exception $e) {
         
         // will return user to previous screen with twilio error
-        return back()->withError($e->getMessage());
+        return back()->withError($e->getMessage())->withInput();
     }
 
         }
