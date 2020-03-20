@@ -5509,6 +5509,58 @@
         "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles"
     },
     {
+        "name": "twilio/sdk",
+        "version": "6.1.0",
+        "version_normalized": "6.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twilio/twilio-php.git",
+            "reference": "eb38f4c6f0d02456d4cbcd7cf88570df9750cda3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twilio/twilio-php/zipball/eb38f4c6f0d02456d4cbcd7cf88570df9750cda3",
+            "reference": "eb38f4c6f0d02456d4cbcd7cf88570df9750cda3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "^6.3",
+            "phpunit/phpunit": ">=4.5",
+            "theseer/phpdox": "^0.12.0"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+        },
+        "time": "2020-03-18T19:42:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Twilio\\": "src/Twilio/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Twilio API Team",
+                "email": "api@twilio.com"
+            }
+        ],
+        "description": "A PHP wrapper for Twilio's API",
+        "homepage": "http://github.com/twilio/twilio-php",
+        "keywords": [
+            "api",
+            "sms",
+            "twilio"
+        ]
+    },
+    {
         "name": "vlucas/phpdotenv",
         "version": "v4.1.2",
         "version_normalized": "4.1.2.0",

@@ -163,6 +163,7 @@ class AdminController extends Controller
         print "Response " . $result['server_response'];
         // Use json_decode($result['server_response']) to work with the response further
         }
+        print $result['http_status'];
 
         
         
