@@ -121,7 +121,7 @@ class AdminController extends Controller
         $new_message->message = $request->get('message');
         $new_message->user_id  = Auth::user()->id;
         
-        //$new_message->save();
+        $new_message->save();
         // if ($new_message->save();) {
         # do the next tablecode...
         // if that next table is successful then redirect else whatever      }
@@ -130,7 +130,7 @@ class AdminController extends Controller
         //return $message;
         $phone_numbers = Student::all()->toArray();
         //dd($phone_numbers);
-
+        //dd($message);
 
 //Messaging REST API
     try {
@@ -151,7 +151,7 @@ class AdminController extends Controller
         $phone_numbers[0]["phone_number"],
             array(
                 'from' => $twilio_number,
-                'body' => 'Testing my Twilio API'
+                'body' => $message[0]["message"]
             )
         )){
             
