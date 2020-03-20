@@ -110,7 +110,7 @@ class AdminController extends Controller
         $new_message->message = $request->get('message');
         $new_message->user_id  = Auth::user()->id;
         
-        $new_message->save();
+        //$new_message->save();
         // if ($new_message->save();) {
             # do the next tablecode...
             // if that next table is successful then redirect else whatever      }
@@ -119,8 +119,9 @@ class AdminController extends Controller
 
         //Messaging REST API
         $message = Message::where('message',$request->get('message'))->select('message')->first();
-        return $message;
-
+        //return $message;
+        $phone_numbers = Student::all('phone_number');
+        return $phone_numbers;
         
         
         
