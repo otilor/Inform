@@ -142,14 +142,20 @@ $auth_token = '535569c8159f51d75d36ab91c92ffaf9';
 $twilio_number = "+12057934134";
 
 $client = new Client($account_sid, $auth_token);
-$client->messages->create(
+if($client->messages->create(
     // Where to send a text message (your cell phone?)
     '+2348126950044',
     array(
         'from' => $twilio_number,
-        'body' => 'I sent this message in under 10 minutes!'
+        'body' => 'Testing my Twilio API'
     )
-);
+)){
+    return redirect()->back()->with('success','Message successfully sent');
+
+}
+else{
+    return redirect()->back()->with('error','Message failed to send. Kindly Retry');
+}
 
 
         
