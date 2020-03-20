@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Twilio\Rest\Client;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class AdminController extends Controller
@@ -126,44 +128,29 @@ class AdminController extends Controller
         
         
 
-        $username = 'gabrielfemi';
-        $password = 'Portedjester_20';
-        $messages = array(
-        array('to'=>'+2348167345364', 'body'=>'Hello World!')
-        );  
-        function send_message ( $post_body, $url, $username, $password) {
-            $ch = curl_init( );
-            $headers = array(
-            'Content-Type:application/json',
-            'Authorization:Basic '. base64_encode("$username:$password")
-            );
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt ( $ch, CURLOPT_URL, $url );
-            curl_setopt ( $ch, CURLOPT_POST, 1 );
-            curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
-            curl_setopt ( $ch, CURLOPT_POSTFIELDS, $post_body );
-            // Allow cUrl functions 20 seconds to execute
-            curl_setopt ( $ch, CURLOPT_TIMEOUT, 20 );
-            // Wait 10 seconds while trying to connect
-            curl_setopt ( $ch, CURLOPT_CONNECTTIMEOUT, 10 );
-            $output = array();
-            $output['server_response'] = curl_exec( $ch );
-            $curl_info = curl_getinfo( $ch );
-            $output['http_status'] = $curl_info[ 'http_code' ];
-            $output['error'] = curl_error($ch);
-            curl_close( $ch );
-            return $output;
-            } 
+        
 
-        $result = send_message( json_encode($messages), 'https://api.bulksms.com/v1/messages?auto-unicode=true&longMessageMaxParts=30', $username, $password );
 
-        if ($result['http_status'] != 201) {
-        print "Error sending: " . ($result['error'] ? $result['error'] : "HTTP status ".$result['http_status']."; Response was " .$result['server_response']);
-        } else {
-        print "Response " . $result['server_response'];
-        // Use json_decode($result['server_response']) to work with the response further
-        }
-        print $result['http_status'];
+
+// Your Account SID and Auth Token from twilio.com/console
+$account_sid = 'AC45a2dad812bb662dc11a77335d38c14a';
+$auth_token = '535569c8159f51d75d36ab91c92ffaf9';
+// In production, these should be environment variables. E.g.:
+// $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
+
+// A Twilio number you own with SMS capabilities
+$twilio_number = "+12057934134";
+
+$client = new Client($account_sid, $auth_token);
+$client->messages->create(
+    // Where to send a text message (your cell phone?)
+    '+2348126950044',
+    array(
+        'from' => $twilio_number,
+        'body' => 'I sent this message in under 10 minutes!'
+    )
+);
+
 
         
         
