@@ -18,6 +18,11 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function index()
+    {
+        return view('index');
+    }
     /**
      * Display a listing of the resource.
      *
