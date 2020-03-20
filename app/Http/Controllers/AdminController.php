@@ -117,7 +117,6 @@ class AdminController extends Controller
             # do the next tablecode...
             // if that next table is successful then redirect else whatever      }
         
-        
 
         //Messaging REST API
         $message = Message::where('message',$request->get('message'))->select('message')->first();
@@ -131,32 +130,37 @@ class AdminController extends Controller
         
 
 
-
+try {
 // Your Account SID and Auth Token from twilio.com/console
-$account_sid = 'AC45a2dad812bb662dc11a77335d38c14a';
-$auth_token = '535569c8159f51d75d36ab91c92ffaf9';
-// In production, these should be environment variables. E.g.:
-// $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
+    $account_sid = 'AC45a2dad812bb662dc11a77335d38c14a';
+    $auth_token = '535569c8159f51d75d36ab91c92ffaf9';
+    // In production, these should be environment variables. E.g.:
+    // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
 
-// A Twilio number you own with SMS capabilities
-$twilio_number = "+12057934134";
+    // A Twilio number you own with SMS capabilities
+    $twilio_number = "+12057934134";
 
-$client = new Client($account_sid, $auth_token);
-if($client->messages->create(
-    // Where to send a text message (your cell phone?)
-    '+2348126950044',
-    array(
-        'from' => $twilio_number,
-        'body' => 'Testing my Twilio API'
-    )
-)){
-    return redirect()->back()->with('success','Message successfully sent');
-
+    $client = new Client($account_sid, $auth_token);
+    if($client->messages->create(
+        // Where to send a text message (your cell phone?)
+        '+234812695004224',
+        array(
+            'from' => $twilio_number,
+            'body' => 'Testing my Twilio API'
+        )
+    )){
+        
+        return back()->with('success','Message successfully sent');
+    }
+        
+        
+    
+    
+}catch (\Exception $e) {
+    
+    // will return user to previous screen with twilio error
+    return back()->withError($e->getMessage());
 }
-else{
-    return redirect()->back()->with('error','Message failed to send. Kindly Retry');
-}
-
 
         
         
