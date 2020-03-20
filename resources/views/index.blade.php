@@ -74,7 +74,7 @@
                                 {{ csrf_field() }}
                                 @include('inc.messages')
                                 <div>
-                                    <textarea id="textarea" name = "message" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars."></textarea>
+                                <textarea id="textarea" name = "message" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars.">{{ old('message') }}</textarea>
                                 </div>
                                 <input type="submit" class="form-group btn btn-primary" value="Send Message">
                             </form>
