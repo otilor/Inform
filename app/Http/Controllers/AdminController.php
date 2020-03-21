@@ -138,7 +138,7 @@ class AdminController extends Controller
         //return $message;
         $phone_numbers = Student::all()->toArray();
         // dd($phone_numbers);
-        // dd($message);
+         // dd($message);
 
 //Messaging REST API
     try {
@@ -163,7 +163,7 @@ class AdminController extends Controller
             )
         )){
             // Set message status to 1 if it is sent then redirect back to admin page
-            
+
             $successful_message = new Message;
             $successful_message->message_status = 1;
             $successful_message->save();

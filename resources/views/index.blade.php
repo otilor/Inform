@@ -21,17 +21,20 @@
                                 <div class="clearfix"></div>
                             </div>
                             <!-- end page title end breadcrumb -->
-                            
-                            <!--  
+                            @if(count ($all_students) <= 0)
+                            <!--If there are no students in the class-->
+                            <p>Please you have to add students to the class first. <a class = "btn btn-primary" href="/add">Add Students</a></p>
+                            @else
+                            <!--
                             <form style = "box-sizing: border-box" action={{ route('send_message') }} method="POST">
                                 {{ csrf_field() }}
                                 @include('inc.messages')
                                 <div>
-                                <textarea id="textarea" name = "message" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars.">{{ old('message') }}</textarea>
+                                <textarea id="textarea" name = "message" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars."></textarea>
                                 </div>
                                 <input type="submit" class="form-group btn btn-primary" value="Send Message">
                             </form>-->
-
+                            @endif
                             <div class="row">
                                 <div class="col-xl-8">
                                     <div class="row">
