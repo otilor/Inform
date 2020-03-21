@@ -21,9 +21,10 @@ class AdminController extends Controller
 
     public function index()
     {
+        $messages_delivered = Message::where('message_status',1)->get();
         $all_messages = Message::where('user_id',Auth::user()->id)->get();
         $all_students = Student::where('added_by', Auth::user()->id)->get();
-        return view('index', ['all_messages' => $all_messages, 'all_students' => $all_students]);
+        return view('index', ['messages_delivered' => $messages_delivered,'all_messages' => $all_messages, 'all_students' => $all_students]);
     }
     /**
      * Display a listing of the resource.
