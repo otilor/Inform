@@ -54,16 +54,16 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'phone_number' => 'bail|required|numeric|digits:11'
+            'phone_number' => 'bail|required|numeric|digits:10'
         ]);
 
         //Store the Phone number of the student in the database
 
         $store_student = new Student;
         $phone_number = $request->phone_number;
-        $store_student->phone_number = $phone_number;
+        $store_student->phone_number = '+234'.$phone_number;
         $store_student->save();
-        return redirect()->back()->with('success', 'Student phone number has been added');
+        return redirect()->back()->with('success', 'Student phone number 0'.$phone_number. ' has been added');
     }
 
     /**
@@ -121,7 +121,7 @@ class AdminController extends Controller
     {
         
         $request->validate([
-            'message' => 'required|min:10|max:255'
+            'message' => 'required|min:10|max:191'
         ]);
         
         $new_message  = new Message;

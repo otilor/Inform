@@ -74,10 +74,10 @@
                             <form class="form-horizontal m-t-20" action="{{ route('add_student_phone_number') }}" method="POST">
                                     {{ csrf_field() }}
                                     @include('inc.messages')
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input class="form-control" type="phone" required="" maxlength = "11" name = "phone_number" placeholder="Phone number">
-                                        </div>
+                                                                        <!--Phone number with prefix-->
+                                    <div class="form-group mb-0">
+                                        <h6 class="sub-title my-3">Kindly fill in an appropriate phone number </h6>
+                                    <div class="input-group"><span class="input-group-addon bootstrap-touchspin-prefix">+234(0)</span><input type="number" placeholder = "example: 7012345678" value="{{ old('phone_number') }}" name="phone_number" class="form-control" style="display: block;" required = ""></div>
                                     </div>
  
             

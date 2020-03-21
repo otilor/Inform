@@ -34,13 +34,16 @@
                 </li>
 
                 <li>
-                    <a class="waves-effect">
-                    <form action="{{ route('logout') }}" method="POST">
+                        
+                        <a class="waves-effect" href="javascript:document.admin.submit()">
+                            
+                                {{ csrf_field() }}
+                                <i class="mdi mdi-logout "></i>
+                                <span> Logout </span>
+                        </a>
+                    <form name = "admin" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
-                        <i class="mdi mdi-account-multiple-plus "></i>
-                        <span> <input type="submit" value="Logout"> </span>
                     </form>
-                    </a>
                 </li>
 
                 
