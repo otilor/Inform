@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="px-3 pb-3">
-                <form class="form-horizontal m-t-20" action="{{ route('login') }}" method="POST">
+                <form class="form-horizontal m-t-20" action="{{ route('login') }}" method="POST" name="login_form">
                         {{ csrf_field() }}
                         <div class="form-group row">
                             <div class="col-12">
@@ -104,6 +104,9 @@
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+        <script>
+            document.login_form.email.focus();
+        </script>
 
     </body>
 </html>
