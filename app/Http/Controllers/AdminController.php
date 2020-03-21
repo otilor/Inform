@@ -22,8 +22,8 @@ class AdminController extends Controller
     public function index()
     {
         $all_messages = Message::where('user_id',Auth::user()->id)->get();
-  
-        return view('index', compact('all_messages',$all_messages));
+        $all_students = Student::where('added_by', Auth::user()->id)->get();
+        return view('index', ['all_messages' => $all_messages, 'all_students' => $all_students]);
     }
     /**
      * Display a listing of the resource.
@@ -62,6 +62,7 @@ class AdminController extends Controller
         $store_student = new Student;
         $phone_number = $request->phone_number;
         $store_student->phone_number = '+234'.$phone_number;
+        $store_student->added_by = Auth::user()->id;
         $store_student->save();
         return redirect()->back()->with('success', 'Student phone number 0'.$phone_number. ' has been added');
     }
@@ -161,7 +162,11 @@ class AdminController extends Controller
                 'body' => $message[0]["message"].'. Sent by '. Auth::user()->name
             )
         )){
+            // Set message status to 1 if it is sent then redirect back to admin page
             
+            $successful_message = new Message;
+            $successful_message->message_status = 1;
+            $successful_message->save();
             return back()->with('success','Message successfully sent');
         }
             

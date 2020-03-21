@@ -47,7 +47,7 @@
                                                         <div class="col-9 align-self-center text-right">
                                                             <div class="m-l-10">
                                                                 <h5 class="mt-0">18090</h5>
-                                                                <p class="mb-0 text-muted">Visits Today <span class="badge bg-soft-success"><i class="mdi mdi-arrow-up"></i>2.35%</span></p>
+                                                                <p class="mb-0 text-muted">Messages delivered<span class="badge bg-soft-success"><i class="mdi mdi-arrow-up"></i>2.35%</span></p>
                                                             </div>
                                                         </div>                                                                                          
                                                     </div>
@@ -69,8 +69,8 @@
                                                         </div>
                                                         <div class="col-9 text-right align-self-center">
                                                             <div class="m-l-10 ">
-                                                                <h5 class="mt-0">562</h5>
-                                                                <p class="mb-0 text-muted">New Users</p>
+                                                                <h5 class="mt-0">{{ count($all_students) }}</h5>
+                                                                <p class="mb-0 text-muted">New User(s) added by you</p>
                                                             </div>
                                                         </div>                                                                                                                
                                                     </div>
@@ -88,18 +88,18 @@
                                                     <div class="d-flex flex-row">
                                                         <div class="col-3 align-self-center">
                                                             <div class="round ">
-                                                                <i class="mdi mdi-cart"></i>
+                                                                <i class="mdi mdi-message"></i>
                                                             </div>
                                                         </div>
                                                         <div class="col-9 align-self-center text-right">
                                                             <div class="m-l-10 ">
-                                                                <h5 class="mt-0">7514</h5>
-                                                                <p class="mb-0 text-muted">New Orders</p>
+                                                                <h5 class="mt-0">{{ count($all_messages) }}</h5>
+                                                                <p class="mb-0 text-muted">Messages so far</p>
                                                             </div>
                                                         </div>                                                                
                                                     </div>
                                                     <div class="progress mt-3" style="height:3px;">
-                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 61%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{ count($all_messages) }}%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </div><!--end card-body-->
                                             </div><!--end card-->

@@ -16,6 +16,8 @@ class Students extends Migration
         Schema::create('students', function($table){
             $table->increments('id');
             $table->string('phone_number');
+            $table->bigInteger('added_by')->unsigned();
+            $table->foreign('added_by')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }
