@@ -31,9 +31,10 @@
                 </div>
 
                 <div class="px-3 pb-3">
+                    @include('inc.messages')
                 <form class="form-horizontal m-t-20" action="{{ route('login') }}" method="POST" name="login_form">
                         {{ csrf_field() }}
-                        @include('inc.messages')
+                        
                         <div class="form-group row">
                             <div class="col-12">
                                 <input class="form-control" name = "email" type="email" required="" placeholder="Email">

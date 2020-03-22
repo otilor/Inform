@@ -11,7 +11,16 @@
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+
+
+        <!-- DataTables -->
+        <link href="assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
         <!-- jvectormap -->
+
+        
         <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
         <link href="assets/plugins/fullcalendar/vanillaCalendar.css" rel="stylesheet" type="text/css"  />
         
@@ -94,14 +103,37 @@
                                 @if (count($all_students) == 0)
                                 <p>There are no students. Start off by adding students</p>
                                 @else
-                                <ul>
-                                    @foreach ($all_students as $application)
-                                    <li>{{ $application->phone_number }}</li>
-                                    @endforeach
-                                </ul>
-                                @endif
-                            </div>
+                                
+                                
+
+
                             
+
+                            <table id="datatable" class="table table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Appointment Date</th>
+                                    <th>Personal Message</th>
+                                    
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    @foreach ($all_students as $student)
+                                <tr>
+                                    <td>{{ $student->id }}</td>
+                                    <td>{{  $student->phone_number }}</td>
+                                    
+                                    
+                                    
+                                </tr>
+                                @endforeach
+                                
+                                </tbody>
+                            </table>
+                            @endif
+                        </div>
             
                         </div><!-- container -->
 
@@ -145,6 +177,30 @@
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+
+
+
+
+
+        <!-- Required datatable js -->
+        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/plugins/datatables/jszip.min.js"></script>
+        <script src="assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.print.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+ 
+        <!-- Datatable init js -->
+        <script src="assets/pages/datatables.init.js"></script> 
+
 
     </body>
 </html>
