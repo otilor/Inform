@@ -73,16 +73,37 @@
 
 
                             <!--Add students form-->
-                            <div class="px-3 pb-3">
-                                <form style = "box-sizing: border-box" action={{ route('send_message') }} method="POST">
-                                    {{ csrf_field() }}
-                                    @include('inc.messages')
-                                    <div>
-                                    <textarea id="textarea" name = "message" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars."></textarea>
+                            <div class="wrapper-page">
+
+                                <div class="card col-">
+                                    <div class="card-body">
+                        
+                                       
+                                        <div class="col-xl-12 px-3 pb-3">
+                                            @include('inc.messages')
+                                        <form class="form-horizontal m-t-20" action="{{ route('send_message') }}" method="POST" name="message_form">
+                                                {{ csrf_field() }}
+                                                
+                                                
+                                                <div class="form-group row">
+                                                    <div class="col-12">
+                                                    <textarea name = "message" class="form-group col-12" rows="4" placeholder="Enter your message to the class">{{ old('message') }}</textarea>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="form-group text-center row m-t-20">
+                                                    <div class="col-12">
+                                                        <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Send Message</button>
+                                                    </div>
+                                                </div>
+                        
+                                                
+                                            </form>
+                                        </div>
+                        
                                     </div>
-                                    <input type="submit" class="form-group btn btn-primary" value="Send Message">
-                                </form>
                                 </div>
+                            </div>
                             
                             
                             

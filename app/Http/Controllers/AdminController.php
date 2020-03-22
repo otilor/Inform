@@ -133,11 +133,7 @@ class AdminController extends Controller
             'message' => 'required|min:10|max:191'
         ]);
         
-        $new_message  = new Message;
-        $new_message->message = $request->get('message');
-        $new_message->user_id  = Auth::user()->id;
         
-        $new_message->save();
         // if ($new_message->save();) {
         # do the next tablecode...
         // if that next table is successful then redirect else whatever      }
@@ -181,7 +177,7 @@ class AdminController extends Controller
             
         
         
-    }catch (RestException $e) {
+    }catch (\RestException $e) {
         
         // will return user to previous screen with twilio error
         return back()->withError($e->getMessage().' Kindly check your connection and your filled details')->withInput();
@@ -190,5 +186,9 @@ class AdminController extends Controller
         return back()->with('error', 'Your message could not send kindly check your connection');
     }
 
-        }
+    $new_message  = new Message;
+    $new_message->message = $request->get('message');
+    $new_message->user_id  = Auth::user()->id;
+    $new_message->save();
+}
 }

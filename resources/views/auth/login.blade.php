@@ -37,13 +37,11 @@
                         
                         <div class="form-group row">
                             <div class="col-12">
-                                <input class="form-control" name = "email" type="email" required="" placeholder="Email">
+                                <input class="form-control" name = "email" type="email" required="" placeholder="Email" value="{{ old('email') }}">
                             </div>
                         </div>
 
-                        @error('email')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                        
 
                         <div class="form-group row">
                             <div class="col-12">
@@ -51,9 +49,7 @@
                             </div>
                         </div>
 
-                        @error('password')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                        
 
                         <div class="form-group row">
                             <div class="col-12">
