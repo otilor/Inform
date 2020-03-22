@@ -112,7 +112,14 @@ class AdminController extends Controller
     {
         //
     }
+    /**
+     * @param int $id
+     */
 
+    public function send_message()
+    {
+        return view('send');
+    }
     /**
      * @param
      * @param \Illuminate\Http\Request  $request
@@ -174,10 +181,13 @@ class AdminController extends Controller
             
         
         
-    }catch (\Exception $e) {
+    }catch (RestException $e) {
         
         // will return user to previous screen with twilio error
-        return back()->withError($e->getMessage())->withInput();
+        return back()->withError($e->getMessage().' Kindly check your connection and your filled details')->withInput();
+    }
+    catch (\Exception $exception){
+        return back()->with('error', 'Your message could not send kindly check your connection');
     }
 
         }

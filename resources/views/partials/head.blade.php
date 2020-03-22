@@ -5,6 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name','Laravel') }} by Gabriel Akinyosoye</title>
     <meta content="Admin Dashboard" name="description" />
+    
     <meta content="Mannatthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 

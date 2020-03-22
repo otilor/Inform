@@ -17,7 +17,7 @@ Route::get('/', 'AdminController@index');
 
 Auth::routes();
 
-
-Route::post('/', 'AdminController@send')->name('send_message');
+Route::get('/send','AdminController@send_message');
+Route::post('/send', 'AdminController@send')->name('send_message');
 Route::get('/add', 'AdminController@create');
 Route::post('/add', 'AdminController@store')->name('add_student_phone_number');

@@ -77,7 +77,7 @@
                                                                         <!--Phone number with prefix-->
                                     <div class="form-group mb-0">
                                         <h6 class="sub-title my-3">Kindly fill in an appropriate phone number </h6>
-                                    <div class="input-group"><span class="input-group-addon bootstrap-touchspin-prefix">+234(0)</span><input type="number" placeholder = "example: 7012345678" value="{{ old('phone_number') }}" name="phone_number" class="form-control" style="display: block;" required = ""></div>
+                                    <div class="input-group"><span class="input-group-addon bootstrap-touchspin-prefix">+234(0)</span><input type="text" maxlength= 10 placeholder = "example: 7012345678" value="{{ old('phone_number') }}" name="phone_number" class="form-control" style="display: block;" required = ""></div>
                                     </div>
  
             

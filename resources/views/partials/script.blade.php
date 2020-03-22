@@ -16,7 +16,7 @@
 
 <script src="assets/plugins/raphael/raphael-min.js"></script>
 <script src="assets/plugins/morris/morris.min.js"></script> 
-    
+<script src="assets/pages/modal-animation.init.js"></script>
 <script src="assets/pages/dashborad.js"></script>
 
 <!-- App js -->

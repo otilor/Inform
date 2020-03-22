@@ -34,6 +34,13 @@
                 </li>
 
                 <li>
+                    <a href="/send" class="waves-effect">
+                        <i class=" mdi mdi-message-plus "></i>
+                        <span> Send Message </span>
+                    </a>
+                </li>
+
+                <li>
                         
                         <a class="waves-effect" href="javascript:document.admin.submit()">
                             
