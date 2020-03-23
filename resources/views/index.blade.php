@@ -123,11 +123,13 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-title alert alert-success text-center"><strong>Payment APIs to topup the App</strong></div>
+                            
                             <div class="card-body text-center">
                                 <p>Payment API will soon be added. Either <strong class="badge badge-primary">Paystack</strong> or <strong class="badge badge-success">Rave</strong></p>
+                                <!--
                                 <button class="btn btn-success">Donate to Gabriel Akinyosoye</button>
                             </div>
-                            
+                            -->
                         </div>
 
                     </div>
