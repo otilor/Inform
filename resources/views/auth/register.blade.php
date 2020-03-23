@@ -47,7 +47,7 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input name = "name" class="form-control" type="text" required="" placeholder="Username">
+                                    <input style = "text-transform: capitalize" name = "UserName" class="form-control" type="text" required="" placeholder="Username">
                                 </div>
                             </div>
 
@@ -57,7 +57,7 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input name = "password" class="form-control" type="password" required="" placeholder="Password">
+                                    <input id = "name" name = "password" class="form-control" type="password" required="" placeholder="Password">
                                 </div>
                             </div>
 
@@ -93,18 +93,31 @@
 
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-
+        
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+        <script src="{{ asset('assets/js/detect.js') }}"></script>
+        <script src="{{ asset('assets/js/fastclick.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('assets/js/waves.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+        
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+        
 
+        <script>
+            $("#UserName").on({
+                keydown: function(e) {
+                    if (e.which === 32)
+                    return false;
+                },
+                change: function() {
+                    this.value = this.value.replace(/\s/g, "");
+                }
+            });
+        </script>
     </body>
 </html>
