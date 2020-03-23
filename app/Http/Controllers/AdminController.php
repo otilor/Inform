@@ -138,7 +138,7 @@ class AdminController extends Controller
         # do the next tablecode...
         // if that next table is successful then redirect else whatever      }
 
-        $message = Message::where('message',$request->get('message'))->select('message')->get()->toArray();
+        $message = $request->get('message');
         //return $message;
         $phone_numbers = Student::all()->toArray();
         // dd($phone_numbers);
@@ -160,16 +160,18 @@ class AdminController extends Controller
         if($client->messages->create(
             // Where to send a text message (your cell phone?)
             
-        $phone_numbers[0]["phone_number"],
+        '+2348126950044',
             array(
                 'from' => $twilio_number,
-                'body' => $message[0]["message"].'. Sent by '. Auth::user()->name
+                'body' => $message.'. Sent by '. Auth::user()->name
             )
         )){
             // Set message status to 1 if it is sent then redirect back to admin page
 
             $successful_message = new Message;
+            $successful_message->message = $request->get('message');
             $successful_message->message_status = 1;
+            $successful_message->user_id = Auth::user()->id;
             $successful_message->save();
             return back()->with('success','Message successfully sent');
         }
@@ -177,7 +179,7 @@ class AdminController extends Controller
             
         
         
-    }catch (\RestException $e) {
+    }catch (\Exception $e) {
         
         // will return user to previous screen with twilio error
         return back()->withError($e->getMessage().' Kindly check your connection and your filled details')->withInput();
