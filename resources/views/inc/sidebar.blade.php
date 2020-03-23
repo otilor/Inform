@@ -26,6 +26,14 @@
                     </a>
                 </li>
 
+
+                <li>
+                    <a href="/profile" class="waves-effect">
+                        <i class="mdi mdi-face-profile"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+
                 <li>
                     <a href="/add" class="waves-effect">
                         <i class="mdi mdi-account-multiple-plus "></i>

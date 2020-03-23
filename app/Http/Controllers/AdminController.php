@@ -78,7 +78,7 @@ class AdminController extends Controller
     {
         //
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -193,4 +193,12 @@ class AdminController extends Controller
     $new_message->user_id  = Auth::user()->id;
     $new_message->save();
 }
+
+
+    public function profile()
+    {
+        return 'Oya see ya self';
+    }
 }
+
+

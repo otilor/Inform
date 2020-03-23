@@ -3,13 +3,16 @@
     <nav class="navbar-custom">
 
         <ul class="list-inline float-right mb-0">
-            <!-- language-->
+            
+            <!--Search bar
             <li class="list-inline-item hide-phone app-search">
                 <form role="search" class="">
                     <input type="text" placeholder="Search..." class="form-control">
                     <a href=""><i class="fa fa-search"></i></a>
                 </form>
             </li>
+            -->
+            <!-- language-->
             <li class="list-inline-item dropdown notification-list hide-phone">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect text-white" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">

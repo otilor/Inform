@@ -36,7 +36,7 @@
                             </form>-->
                             @endif
                             <div class="row">
-                                @include('inc.messages')
+                                
                                 <div class="col-xl-12">
                                     <div class="row">
                                         <div class="col-lg-4">

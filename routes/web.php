@@ -17,6 +17,7 @@ Route::get('/', 'AdminController@index');
 
 Auth::routes();
 
+Route::get('/profile','AdminController@profile');
 Route::get('/send','AdminController@send_message');
 Route::post('/send', 'AdminController@send')->name('send_message');
 Route::get('/add', 'AdminController@create');
