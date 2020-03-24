@@ -205,6 +205,12 @@ class AdminController extends Controller
         
         return view('profile', compact('profile', $profile));
     }
+
+
+    public function add_admin()
+    {
+        return view('add_admin');
+    }
 }
 
 

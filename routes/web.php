@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'AdminController@index');
 
 Auth::routes();
-
+Route::get('/admin','AdminController@add_admin');
 Route::get('/profile','AdminController@profile');
 Route::post('/profile','AdminController@update')->name('update');
 Route::get('/send','AdminController@send_message');

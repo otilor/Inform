@@ -34,6 +34,14 @@
                     </a>
                 </li>
 
+
+                <li>
+                    <a href="/admin" class="waves-effect">
+                        <i class="mdi mdi-account-plus"></i>
+                        <span> Add Admin</span>
+                    </a>
+                </li>
+
                 <li>
                     <a href="/add" class="waves-effect">
                         <i class="mdi mdi-account-multiple-plus "></i>
