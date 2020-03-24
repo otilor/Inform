@@ -9,8 +9,8 @@
                                     <div class="page-title-box">
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
-                                            <li class="breadcrumb-item"><a href="#">{{ config('app.name', 'Laravel') }}</a></li>
-                                                <li class="breadcrumb-item active">Message</li>
+                                            <li class="breadcrumb-item"><a href="/">{{ config('app.name', 'Laravel') }}</a></li>
+                                                <li class="breadcrumb-item active">Dashboard</li>
                                             </ol>
                                         </div>
                                         <div class="send_message">

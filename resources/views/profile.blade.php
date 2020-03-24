@@ -27,7 +27,9 @@
                                     <strong><code style="color: black; text-decoration:underline">You can see all your settings</code></strong>
                                 </div>
                                 <div class="col-12">
+                                    <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="thumbnail">
                                     <div class="card-body py-3 px-12">
+                                        
                                         
                                         
                                         <input class = "form-group" type="text" placeholder="Your email" value="{{ $profile->email }}">
