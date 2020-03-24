@@ -47,7 +47,7 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input style = "text-transform: capitalize" name = "UserName" class="form-control" type="text" required="" placeholder="Username">
+                                    <input style = "text-transform: capitalize" name = "name" class="form-control" type="text" required="" placeholder="Username">
                                 </div>
                             </div>
 
