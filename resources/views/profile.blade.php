@@ -35,7 +35,8 @@
                                             <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
                                             <code style = "color:black">
                                                 <strong><h6>{{ $profile->name }}</h6></strong>
-                                                <h6>{{ $profile->email }}</h6>
+                                                <hr>
+                                                <h6><span class="mdi mdi-email"></span> {{ $profile->email }}</h6>
                                             </code>
 
                                         </form>
