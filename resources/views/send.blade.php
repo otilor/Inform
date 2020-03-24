@@ -59,7 +59,7 @@
                                             <li style= "text-transform: capitalize" class="breadcrumb-item active">{{ Request::path() }}</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Add Students to the Class</h4>
+                                        <h4 class="page-title">Send message to the Class</h4>
                                         
                                     </div>
                                 </div>
@@ -67,8 +67,19 @@
                             </div>
                             <!-- end page title end breadcrumb -->
                             @if (count($all_students) <= 0)
-
+                            <!--
                             <strong><p class="alert alert-danger"><code style="text-transform:capitalize; text-decoration:underline; color:black">{{ Auth::user()->name }},</code> you have to add students to the class first. <a class = "btn btn-default" href="/add">Add Students</a></p></strong>
+                            -->
+                            <div>
+                                <div class="card px-3 py-3 mx-3" style="background-color: white">
+                                    <div class="text-center card-body">
+                                        <code style="color: #283179"><h5>To proceed, kindly add in some students</h5></code>
+                                        <a href="/add"><button class="btn btn-primary">Add</button></a>
+                                    </div>
+                                </div>
+                                
+                                </div>
+
                             @else
                             <div>
                                 Welcome, {{ Auth::user()->name }}, send a message to the class.
@@ -100,6 +111,7 @@
                                                         <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Send Message</button>
                                                     </div>
                                                 </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

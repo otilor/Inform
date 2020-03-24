@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
                     <div class="page-content-wrapper ">
-
                         <div class="container-fluid">
 
                             <div class="row">
@@ -22,8 +21,18 @@
                             </div>
                             <!-- end page title end breadcrumb -->
                             @if(count ($all_students) <= 0)
-                            <!--If there are no students in the class-->
+                            <!--If there are no students in the class
                             <strong><p class="alert alert-danger"><code style="text-transform:capitalize; text-decoration:underline; color:black">{{ Auth::user()->name }},</code> you have to add students to the class first. <a class = "btn btn-default" href="/add">Add Students</a></p></strong>
+                            -->
+                            <div>
+                                <div class="card px-3 py-3 mx-3" style="background-color: white">
+                                    <div class="text-center card-body">
+                                        <code style="color: #283179"><h5>To proceed, kindly add in some students</h5></code>
+                                        <a href="/add"><button class="btn btn-primary">Add</button></a>
+                                    </div>
+                                </div>
+                                
+                                </div>
                             @else
                             <!--
                             <form style = "box-sizing: border-box" action={{ route('send_message') }} method="POST">

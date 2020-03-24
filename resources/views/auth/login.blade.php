@@ -75,10 +75,11 @@
                             </div>
 
                             @endif
-
+                            <!--
                             <div class="col-sm-5 m-t-20">
                                 <a href="/register" class="text-muted"><i class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a>
                             </div>
+                        -->
                         </div>
                     </form>
                 </div>
