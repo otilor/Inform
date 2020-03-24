@@ -56,7 +56,7 @@
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
                                             <li class="breadcrumb-item"><a href="#">{{ config('app.name', 'Laravel') }}</a></li>
-                                                <li class="breadcrumb-item active">Dashboard</li>
+                                            <li style= "text-transform: capitalize" class="breadcrumb-item active">{{ Request::path() }}</li>
                                             </ol>
                                         </div>
                                         <h4 class="page-title">Add Students to the Class</h4>
@@ -81,7 +81,7 @@
                                        
                                         <div class="col-xl-12 px-3 pb-3">
                                             @include('inc.messages')
-                                        <form class="form-horizontal m-t-20" action="{{ route('send_message') }}" method="POST" name="message_form">
+                                        <form name = "send_form" class="form-horizontal m-t-20" action="{{ route('send_message') }}" method="POST" name="message_form">
                                                 {{ csrf_field() }}
                                                 
                                                 
@@ -98,9 +98,38 @@
                                                 </div>
                         
                                                 
-                                            </form>
-                                        </div>
-                        
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                                              
                                     </div>
                                 </div>
                             </div>
@@ -129,6 +158,9 @@
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
+        <script>
+            document.send_form.message.focus()
+        </script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/modernizr.min.js"></script>

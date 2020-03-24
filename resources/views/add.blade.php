@@ -65,7 +65,7 @@
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
                                             <li class="breadcrumb-item"><a href="#">{{ config('app.name', 'Laravel') }}</a></li>
-                                                <li class="breadcrumb-item active">Dashboard</li>
+                                            <li style= "text-transform: capitalize" class="breadcrumb-item active">{{ Request::path() }}</li>
                                             </ol>
                                         </div>
                                         <h4 class="page-title">Add Students to the Class</h4>
