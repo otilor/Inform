@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Twilio\Rest\Client;
+use Twilio\Exceptions;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Message;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -182,11 +184,10 @@ class AdminController extends Controller
     }catch (\Exception $e) {
         
         // will return user to previous screen with twilio error
-        return back()->withError($e->getMessage().' Kindly check your connection and your filled details')->withInput();
+        //return back()->withError($e->getMessage().' Kindly check your connection and your filled details')->withInput();
+        return back()->withError('Failed to send. Kindly check your connection and try again.')->withInput();
     }
-    catch (\Exception $exception){
-        return back()->with('error', 'Your message could not send kindly check your connection');
-    }
+    
 
     $new_message  = new Message;
     $new_message->message = $request->get('message');
@@ -197,7 +198,9 @@ class AdminController extends Controller
 
     public function profile()
     {
-        return 'Oya see ya self';
+        $profile = User::where('id',Auth::user()->id)->first();
+        
+        return view('profile', compact('profile', $profile));
     }
 }
 
