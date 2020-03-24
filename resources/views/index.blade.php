@@ -34,7 +34,7 @@
                                 </div>
                                 <input type="submit" class="form-group btn btn-primary" value="Send Message">
                             </form>-->
-                            @endif
+                            
                             <div class="row">
                                 
                                 <div class="col-xl-12">
@@ -122,7 +122,7 @@
                 
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-title alert alert-success text-center"><strong>Payment APIs to topup the App</strong></div>
+                            <div class="card-title alert alert-info text-center"><strong>Payment APIs to topup the App</strong></div>
                             
                             <div class="card-body text-center">
                                 <p>Payment API will soon be added. Either <strong class="badge badge-primary">Paystack</strong> or <strong class="badge badge-success">Rave</strong></p>
@@ -133,7 +133,7 @@
                         </div>
 
                     </div>
-
+                    @endif
                 </div><!-- container -->
 
         </div> <!-- Page content Wrapper -->

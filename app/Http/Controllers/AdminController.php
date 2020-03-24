@@ -23,7 +23,9 @@ class AdminController extends Controller
 
     public function index()
     {
-        $messages_delivered = Message::where('message_status',1)->get();
+        // This Code gets all the delivered message from all users instead of a specific user->This is a Bug!
+        $messages_delivered = Message::where([['message_status',1],['user_id',Auth::user()->id]])->get();
+        // Social-Distancing.
         $all_messages = Message::where('user_id',Auth::user()->id)->get();
         $all_students = Student::where('added_by', Auth::user()->id)->get();
         return view('index', ['messages_delivered' => $messages_delivered,'all_messages' => $all_messages, 'all_students' => $all_students]);
@@ -43,7 +45,7 @@ class AdminController extends Controller
     public function create()
     {
         
-        $all_students = Student::all();
+        $all_students = Student::where('added_by',Auth::user()->id)->get();
         
         return view('add', compact('all_students', $all_students));
     }
@@ -120,7 +122,8 @@ class AdminController extends Controller
 
     public function send_message()
     {
-        return view('send');
+        $all_students = Student::where('added_by', Auth::user()->id)->get();
+        return view('send', compact('all_students', $all_students));
     }
     /**
      * @param

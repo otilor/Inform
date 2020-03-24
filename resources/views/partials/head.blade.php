@@ -6,7 +6,7 @@
     <title>{{ config('app.name','Laravel') }} by Gabriel Akinyosoye</title>
     <meta content="Admin Dashboard" name="description" />
     
-    <meta content="Mannatthemes" name="author" />
+    <meta content="Gabriel Akinyosoye" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <link rel="shortcut icon" href="assets/images/favicon.ico">

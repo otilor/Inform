@@ -66,6 +66,10 @@
                                 <div class="clearfix"></div>
                             </div>
                             <!-- end page title end breadcrumb -->
+                            @if (count($all_students) <= 0)
+
+                            <strong><p class="alert alert-danger"><code style="text-transform:capitalize; text-decoration:underline; color:black">{{ Auth::user()->name }},</code> you have to add students to the class first. <a class = "btn btn-default" href="/add">Add Students</a></p></strong>
+                            @else
                             <div>
                                 Welcome, {{ Auth::user()->name }}, send a message to the class.
                             </div>    
@@ -96,46 +100,12 @@
                                                         <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Send Message</button>
                                                     </div>
                                                 </div>
-                        
-                                                
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                                              
                                     </div>
                                 </div>
                             </div>
                             
                             
-                            
+                            @endif
                             
             
                         </div><!-- container -->

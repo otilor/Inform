@@ -11,7 +11,7 @@
             <!-- Begin page -->
             <div id="wrapper">
 
-                <!-- ========== Left Sidebar Start ========== -->
+                <!-- ========== Le1ft Sidebar Start ========== -->
                 @include('inc.sidebar')
                 <!-- Left Sidebar End -->
 
