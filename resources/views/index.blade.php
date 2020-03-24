@@ -23,7 +23,7 @@
                             <!-- end page title end breadcrumb -->
                             @if(count ($all_students) <= 0)
                             <!--If there are no students in the class-->
-                            <p>{{ Auth::user()->name }}, you have to add students to the class first. <a class = "btn btn-primary" href="/add">Add Students</a></p>
+                            <strong><p class="alert alert-danger"><code style="text-transform:capitalize; text-decoration:underline; color:black">{{ Auth::user()->name }},</code> you have to add students to the class first. <a class = "btn btn-default" href="/add">Add Students</a></p></strong>
                             @else
                             <!--
                             <form style = "box-sizing: border-box" action={{ route('send_message') }} method="POST">
