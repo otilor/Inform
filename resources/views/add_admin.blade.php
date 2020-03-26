@@ -3,7 +3,7 @@
 
 @section('content')
 
-@if ($user->role_id != 0)
+@if ($user->role_id != 0 && $user->role_id != 1)
 <div>
 <div class="card px-3 py-3 mx-3" style="background-color: white">
     <div class="text-center card-body">
@@ -88,11 +88,20 @@
                                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Admin Privilege') }}</label>
     
                                 <div class="col-md-6">
+                                    @if ($user->role_id == 0)
                                     <select class="custom-select" name="admin_privilege">
                                         <option>Select Admin Privilege</option>
-                                        <option>All Privileges</option>
-                                        <option>Basic Privileges</option>
+                                        <option>Root</option>
+                                        <option>Head of Department</option>
+                                        <option>Course Representative</option>
                                     </select>
+                                    @elseif ($user->role_id == 1)
+                                    <select class="custom-select" name="admin_privilege">
+                                        <option>Select Admin Privilege</option>
+                                        <option>Course Representative</option>
+                                    </select>
+                                    @endif
+
                                 </div>
                             </div>
                             
