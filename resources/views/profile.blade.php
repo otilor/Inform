@@ -32,13 +32,12 @@
                                         <form>
                                             <!--Form-->
                                             {{ csrf_field() }}
-                                            <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
+                                            <img src="{{ asset('assets/images/users/avatar-8.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
                                             <code style = "color:black">
                                                 <strong><h6>{{ $profile->name }}</h6></strong>
                                                 <hr>
                                                 <h6><span class="mdi mdi-email"></span> {{ $profile->email }}</h6>
                                             </code>
-
                                         </form>
                                         
                                         

@@ -9,6 +9,7 @@ use App\Student;
 use App\Message;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -26,8 +27,8 @@ class AdminController extends Controller
         // This Code gets all the delivered message from all users instead of a specific user->This is a Bug!
         $messages_delivered = Message::where([['message_status',1],['user_id',Auth::user()->id]])->get();
         // Social-Distancing.
-        $all_messages = Message::where('user_id',Auth::user()->id)->get();
-        $all_students = Student::where('added_by', Auth::user()->id)->get();
+        $all_messages = Message::where('user_id',Auth::id())->get();
+        $all_students = Student::where('added_by', Auth::id())->get();
         return view('index', ['messages_delivered' => $messages_delivered,'all_messages' => $all_messages, 'all_students' => $all_students]);
     }
     /**
@@ -45,7 +46,8 @@ class AdminController extends Controller
     public function create()
     {
         
-        $all_students = Student::where('added_by',Auth::user()->id)->get();
+        $all_students = Student::where('added_by',Auth::id())->get();
+        
         
         return view('add', compact('all_students', $all_students));
     }
@@ -67,7 +69,7 @@ class AdminController extends Controller
         $store_student = new Student;
         $phone_number = $request->phone_number;
         $store_student->phone_number = '+234'.$phone_number;
-        $store_student->added_by = Auth::user()->id;
+        $store_student->added_by = Auth::id();
         $store_student->save();
         return redirect()->back()->with('success', 'Student phone number 0'.$phone_number. ' has been added');
     }
@@ -176,7 +178,7 @@ class AdminController extends Controller
             $successful_message = new Message;
             $successful_message->message = $request->get('message');
             $successful_message->message_status = 1;
-            $successful_message->user_id = Auth::user()->id;
+            $successful_message->user_id = Auth::id();
             $successful_message->save();
             return back()->with('success','Message successfully sent');
         }
@@ -194,14 +196,14 @@ class AdminController extends Controller
 
     $new_message  = new Message;
     $new_message->message = $request->get('message');
-    $new_message->user_id  = Auth::user()->id;
+    $new_message->user_id  = Auth::id();
     $new_message->save();
 }
 
 
     public function profile()
     {
-        $profile = User::where('id',Auth::user()->id)->first();
+        $profile = User::where('id',Auth::id())->first();
         
         return view('profile', compact('profile', $profile));
     }
@@ -209,9 +211,11 @@ class AdminController extends Controller
 
     public function add_admin()
     {
-        $all_students = Student::where('added_by',Auth::user()->id)->get();
+        $all_students = Student::where('added_by',Auth::id())->get();
         return view('add_admin', compact('all_students', $all_students));
     }
+
+
 }
 
 
