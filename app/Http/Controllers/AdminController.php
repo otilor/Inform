@@ -206,8 +206,8 @@ class AdminController extends Controller
 
     public function add_admin()
     {
-        $all_students = Student::where('added_by',Auth::id())->get();
-        return view('add_admin', compact('all_students', $all_students));
+        $user = User::where('id',Auth::id())->first();
+        return view('add_admin', compact('user', $user));
     }
 
 
