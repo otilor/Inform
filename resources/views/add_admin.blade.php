@@ -83,6 +83,18 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Admin Privilege') }}</label>
+    
+                                <div class="col-md-6">
+                                    <select class="custom-select" name="admin_privilege">
+                                        <option>Select Admin Privilege</option>
+                                        <option>All Privileges</option>
+                                        <option>Basic Privileges</option>
+                                    </select>
+                                </div>
+                            </div>
                             
     
                             <div class="form-group row mb-0">
