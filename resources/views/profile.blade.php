@@ -29,14 +29,21 @@
                                 <div class="col-12">
                                     
                                     <div class="card-body py-3 px-12">
-                                        <form>
+                                        <form name = "update_profile_form">
                                             <!--Form-->
                                             {{ csrf_field() }}
-                                            <img src="{{ asset('assets/images/users/avatar-8.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
+                                            <img class="img rounded-circle mr-3" height = "64" src="{{ asset('assets/images/users/avatar-8.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
                                             <code style = "color:black">
                                                 <strong><h6>{{ $profile->name }}</h6></strong>
                                                 <hr>
                                                 <h6><span class="mdi mdi-email"></span> {{ $profile->email }}</h6>
+                                                <select class="custom-select">
+                                                    <option>Select your gender</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+
+                                                <input id = "update_button" class = "btn btn-primary my-2" value = "Update" type="submit">
                                             </code>
                                         </form>
                                         
@@ -61,4 +68,11 @@
         </div> <!-- Page content Wrapper -->
 
                 <!-- content -->
+
+        
 @endsection
+
+<script>
+    
+    
+</script>

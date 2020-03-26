@@ -21,3 +21,9 @@
 
 <!-- App js -->
 <script src="assets/js/app.js"></script>
+
+<script>
+    $('#update_button').click(function(e){
+        e.preventDefault();
+    })
+</script>

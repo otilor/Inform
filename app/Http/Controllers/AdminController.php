@@ -201,12 +201,7 @@ class AdminController extends Controller
 }
 
 
-    public function profile()
-    {
-        $profile = User::where('id',Auth::id())->first();
-        
-        return view('profile', compact('profile', $profile));
-    }
+    
 
 
     public function add_admin()
