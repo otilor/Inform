@@ -59,6 +59,7 @@ class RegisterAdminController extends Controller
         {
             $new_admin_user->role_id = 1;
         }
+        $new_admin_user->first_time = 1;
         $new_admin_user->save();
         //Returns back to previous route with Success Message
         return back()->with('success', 'Admin Account Created!');

@@ -21,6 +21,7 @@ class AdminSeeder extends Seeder
             'email' => Str::random(4).'@gmail.com',
             'gender' => 'Male',
             'password' => Hash::make('gabriel123'),
+            'first_time' => 1,
             
         ]);
     }
