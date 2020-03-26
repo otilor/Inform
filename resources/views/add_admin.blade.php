@@ -91,16 +91,22 @@
                                     @if ($user->role_id == 0)
                                     <select class="custom-select" name="admin_privilege">
                                         <option>Select Admin Privilege</option>
-                                        <option>Root</option>
-                                        <option>Head of Department</option>
-                                        <option>Course Representative</option>
+                                        <option value=0>Root</option>
+                                        <option value=1>Head of Department</option>
+                                        <option value=2>Course Representative</option>
                                     </select>
                                     @elseif ($user->role_id == 1)
                                     <select class="custom-select" name="admin_privilege">
-                                        <option>Select Admin Privilege</option>
-                                        <option>Course Representative</option>
+                                        <option value=1>Select Admin Privilege</option>
+                                        <option value=2>Course Representative</option>
                                     </select>
                                     @endif
+
+                                    <select class = "my-3 custom-select" name="gender">
+                                        <option>Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
 
                                 </div>
                             </div>

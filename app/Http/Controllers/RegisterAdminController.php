@@ -51,14 +51,39 @@ class RegisterAdminController extends Controller
         $new_admin_user->name = $request->get('name');
         $new_admin_user->email = $request->get('email');
         $new_admin_user->password = Hash::make($request->get('password'));
-        if ($request->get('admin_privilege') == 'All Privileges')
+        
+        if ($request->get('admin_privilege') == 0)
         {
+            
             $new_admin_user->role_id = 0;
         }
-        else
+        elseif ($request->get('admin_privilege') == 1)
         {
             $new_admin_user->role_id = 1;
         }
+        else
+        {
+            $new_admin_user->role_id = 2;
+        }
+        /**
+         * If the gender is male
+         * @param string
+         */
+        if ($request->get('gender') == 'male')
+        {
+            $new_admin_user->gender = 'male';
+        }
+
+        elseif ($request->get('gender') == 'female')
+        {
+            $new_admin_user->gender = 'Female';
+        }
+
+        else
+        {
+            $new_admin_user->gender = 'Male';
+        }
+
         $new_admin_user->first_time = 1;
         $new_admin_user->save();
         //Returns back to previous route with Success Message
