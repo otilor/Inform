@@ -37,13 +37,13 @@
                                                 <strong><h6>{{ $profile->name }}</h6></strong>
                                                 <hr>
                                                 <h6><span class="mdi mdi-email"></span> {{ $profile->email }}</h6>
-                                                <select class="custom-select">
+                                                <select id = "gender_select" class="custom-select">
                                                     <option>Select your gender</option>
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                 </select>
 
-                                                <input id = "update_button" class = "btn btn-primary my-2" value = "Update" type="submit">
+                                                <input id = "update_profile_button" class = "btn btn-primary my-2" value = "Update" type="submit">
                                             </code>
                                         </form>
                                         

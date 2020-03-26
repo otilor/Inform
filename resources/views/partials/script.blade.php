@@ -23,7 +23,11 @@
 <script src="assets/js/app.js"></script>
 
 <script>
-    $('#update_button').click(function(e){
-        e.preventDefault();
+    $('document').ready(function(){
+        $('#update_profile_button').hide();
+        $('#gender_select').focus(function(e){
+            $("#update_profile_button").show();
+        })
     })
+    
 </script>
