@@ -35,7 +35,18 @@
                                             <img class="img rounded-circle mr-3" height = "64" src="{{ asset('assets/images/users/new_female.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
                                             @endif
                                             <code style = "color:black">
-                                                <strong><h6>{{ $profile->name }}</h6><span class="badge badge-info">{{ $profile->gender }}</span></strong>
+
+                                                <!--displays the user status: root, hod, course rep-->
+                                                @if ($profile->role_id == 0)
+                                                <strong><h6>{{ $profile->name }}</h6><span class="badge badge-success">Root</span></strong>
+                                                @elseif ($profile->role_id == 1)
+                                                <strong><h6>{{ $profile->name }}</h6><span class="badge badge-info">Head of Department</span></strong>
+                                                @else
+                                                <strong><h6>{{ $profile->name }}</h6><span class="badge badge-primary">Course Representative</span></strong>
+                                                @endif
+
+
+
                                                 <hr>
                                                 <h6><span class="mdi mdi-email"></span> {{ $profile->email }} <span class="badge badge-danger">Unverified!</span></h6>
                                                 <select name = "gender" id = "gender_select" class="custom-select">
