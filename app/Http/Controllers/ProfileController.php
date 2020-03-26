@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -70,11 +74,16 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        return "Updated Successfully";
-    }
+        $update_profile = User::where('id',Auth::id())->first();
+        $update_profile->gender = $request->get('gender');
+        $update_profile->save();
+        
 
+        return back()->with('success','Updated successfully!');
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

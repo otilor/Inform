@@ -29,18 +29,27 @@
                                 <div class="col-12">
                                     
                                     <div class="card-body py-3 px-12">
-                                        <form name = "update_profile_form">
+                                        <form name = "update_profile_form" action="{{ route('update_profile') }}" method="POST">
                                             <!--Form-->
-                                            {{ csrf_field() }}
-                                            <img class="img rounded-circle mr-3" height = "64" src="{{ asset('assets/images/users/avatar-8.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
+                                            @include('inc.messages')
+                                            @csrf
+                                            @if ($profile->gender == 'Male')
+                                            <img class="img rounded-circle mr-3" height = "64" src="{{ asset('assets/images/users/male.webp') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
+                                            @else
+                                            <img class="img rounded-circle mr-3" height = "64" src="{{ asset('assets/images/users/new_female.png') }}" class="text-center rounded-circle img-thumbnail" alt="thumbnail">
+                                            @endif
                                             <code style = "color:black">
                                                 <strong><h6>{{ $profile->name }}</h6></strong>
                                                 <hr>
                                                 <h6><span class="mdi mdi-email"></span> {{ $profile->email }}</h6>
-                                                <select id = "gender_select" class="custom-select">
-                                                    <option>Select your gender</option>
-                                                    <option>Male</option>
+                                                <select name = "gender" id = "gender_select" class="custom-select">
+                                                    @if ($profile->gender == 'Male')
+                                                    <option>{{ $profile->gender }}</option>
                                                     <option>Female</option>
+                                                    @elseif ($profile->gender == 'Female')
+                                                    <option>{{ $profile->gender }}</option>
+                                                    <option>Male</option>
+                                                    @endif
                                                 </select>
 
                                                 <input id = "update_profile_button" class = "btn btn-primary my-2" value = "Update" type="submit">

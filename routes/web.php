@@ -23,7 +23,7 @@ Route::post('/admin','RegisterAdminController@create')->name('admin_register');
 
 Route::get('/profile','ProfileController@index');
 
-Route::post('/profile','ProfileController@update')->name('update_profile');
+Route::post('/profile','ProfileController@update', Auth::id())->name('update_profile');
 
 Route::get('/send','AdminController@send_message');
 
