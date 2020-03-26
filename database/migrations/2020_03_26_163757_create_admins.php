@@ -17,7 +17,7 @@ class CreateAdmins extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
-            $table->integer('role_id');
+            $table->integer('role_id')->default(0);
             $table->timestamps();
         });
     }
