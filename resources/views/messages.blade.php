@@ -8,6 +8,21 @@
         <h5>Messages <span class="mdi mdi-message-text"></span></h5>
     </div>
 </div>
+
+@if ( $messages->total() <= 0 )
+
+<div>
+    <div class="card px-3 py-3 mx-3" style="background-color: white">
+        <div class="text-center card-body">
+            <code style="color: black"><h5><span class="mdi mdi-information"></span> No messages here</h5></code>
+            <a href="/send"><button class="btn btn-primary">Send one</button></a>
+        </div>  
+    </div>
+    
+    </div>
+
+@else
+
 @foreach ($messages as $message)
 
 
@@ -28,6 +43,5 @@
 
 
 @endforeach
-
-
+@endif
 @endsection
