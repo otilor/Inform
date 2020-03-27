@@ -9,7 +9,7 @@
     <div class="text-center card-body">
         <code style="color: red"><h5><span class="mdi mdi-information"></span> You currently do not have the permissions to perform this action</h5></code>
         <a href="/"><button class="btn btn-primary">Go home</button></a>
-    </div>
+    </div>  
 </div>
 
 </div>
@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Admin Privilege') }}</label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Account type') }}</label>
     
                                 <div class="col-md-6">
                                     @if ($user->role_id == 0)
@@ -97,7 +97,6 @@
                                     </select>
                                     @elseif ($user->role_id == 1)
                                     <select class="custom-select" name="admin_privilege">
-                                        <option value=1>Select Admin Privilege</option>
                                         <option value=2>Course Representative</option>
                                     </select>
                                     @endif
