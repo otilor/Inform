@@ -56,6 +56,13 @@
                 </li>
 
                 <li>
+                    <a href="/message_root" class="waves-effect">
+                        <i class="mdi mdi-account-multiple-plus "></i>
+                        <span> Message Root </span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="/send" class="waves-effect">
                         <i class=" mdi mdi-message-plus "></i>
                         <span> Send Message </span>

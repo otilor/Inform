@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'AdminController@index');
 
 Auth::routes();
+
+Route::get('/message_root','MessageController@create');
+Route::post('/message_root','MessageController@store')->name('personal_message_to_admin');
+
 Route::get('/admin','AdminController@add_admin');
 
 Route::post('/admin','RegisterAdminController@create')->name('admin_register');

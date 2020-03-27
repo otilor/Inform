@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\PersonalMessage;
 use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +23,6 @@ class MessageController extends Controller
         $messages = Message::where('user_id',Auth::id())->orderBy('created_at','desc')->paginate(10);
         return view('messages', compact('messages', $messages));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +30,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        return view('message_root');
     }
 
     /**
@@ -37,7 +41,14 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        PersonalMessage::create([
+            'message' => $request->get('message'),
+            'sent_by' => Auth::id(),
+            
+        ]);
+
+        return back()->with('success', 'Successfully sent!');
     }
 
     /**
