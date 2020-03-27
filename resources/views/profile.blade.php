@@ -7,8 +7,8 @@
                             <div class="row ">
                                 <div class="col-sm-12">
                                     <div class="page-title-box">
-                                        <div class="send_message">
-                                            <h5>Profile</h5>
+                                        <div class="send_message text-center">
+                                            <h5>Profile <span class = "mdi mdi-face-profile"></span></h5>
                                         </div>
                                     </div>
                                 </div>

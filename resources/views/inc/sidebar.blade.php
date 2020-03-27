@@ -34,6 +34,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="/messages" class="waves-effect">
+                        <i class="mdi mdi-message-text"></i>
+                        <span> Messages</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="/admin" class="waves-effect">

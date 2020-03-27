@@ -21,6 +21,8 @@ Route::get('/admin','AdminController@add_admin');
 
 Route::post('/admin','RegisterAdminController@create')->name('admin_register');
 
+Route::get('/messages', 'MessageController@index');
+
 Route::get('/profile','ProfileController@index');
 
 Route::post('/profile','ProfileController@update', Auth::id())->name('update_profile');
