@@ -53,7 +53,7 @@ class MessageController extends Controller
         
         PersonalMessage::create([
             'message' => $request->get('message'),
-            'sent_by' => Auth::id(),
+            'sent_by' => Auth::user()->email,
             
         ]);
 

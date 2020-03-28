@@ -16,8 +16,8 @@ class CreatePersonalMessagesTable extends Migration
         Schema::create('personal_messages', function (Blueprint $table) {
             $table->id();
             $table->string('message');
-            $table->bigInteger('sent_by')->unsigned();
-            $table->foreign('sent_by')->references('id')->on('users')->onDelete('cascade')->nullable();
+            $table->string('sent_by');
+            $table->foreign('sent_by')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

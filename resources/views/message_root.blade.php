@@ -49,16 +49,38 @@
                     <div class="page-content-wrapper ">
 
                         <div class="container-fluid">
+                            <!-- Only for root users -->
                             @if ($current_user->role_id  == 0)
+
+                           
+
                             <div class="container text-center">
+
                                 <h5>Inbox</h5>
+
                             </div>
                             
-                            <!-- This are all the personal messages... -->
+
+                            <!-- These are all the personal messages... -->
+
+                            <!-- If there are no messages-->
+                            @if ( count ($personal_messages) == 0)
+                                <div class="card mx-3 py-3 px-3 ">
+                                    <h5><code>No messages here, <span style = "text-transform: capitalize">{{Auth::user()->name}}</span></code> <a href="/"><button class="btn btn-primary waves-effect waves-light">Go home</button></a></h5>
+                                    
+                                </div>
+                            @endif
+
                             @foreach ($personal_messages as $personal_message)
+
                             <div class="card mx-3 py-3">
+
                                 <code class="card-header"><h5>{{ $personal_message->created_at }}</h5></code>
-                                <p class="card-body">{{ $personal_message->message }}</p>
+                                <div class="card-body">
+                                    <p>{{ $personal_message->message }}</p>
+                                    <hr>
+                                    <p>Sent by: {{ $personal_message->sent_by }}</p>
+                                </div>
                             </div>
                             @endforeach
                             @else
