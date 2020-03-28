@@ -2,7 +2,18 @@
 @section('content')
                     <div class="page-content-wrapper ">
                         <div class="container-fluid">
+                        @if (Auth::user()->role_id == 0)
 
+                    <!-- All users created -->
+                            <h5 class = "text-center"><code>All users</code></h5>
+                                <div class="card mx-3 py-3">
+                                    <div class="card-body">
+                                        @foreach ($users as $user)
+                                        <p class="text-center">{{ $user->email }}</p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @else
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="page-title-box">
@@ -19,6 +30,10 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+                            
+
+
+                            
                             <!-- end page title end breadcrumb -->
                             @if(count ($all_students) <= 0)
                             <!--If there are no students in the class
@@ -142,6 +157,7 @@
                         </div>
 
                     </div>
+                    @endif
                     @endif
                 </div><!-- container -->
 

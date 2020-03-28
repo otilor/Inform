@@ -29,7 +29,8 @@ class AdminController extends Controller
         // Social-Distancing.
         $all_messages = Message::where('user_id',Auth::id())->get();
         $all_students = Student::where('added_by', Auth::id())->get();
-        return view('index', ['messages_delivered' => $messages_delivered,'all_messages' => $all_messages, 'all_students' => $all_students]);
+        $users = User::all();
+        return view('index', ['messages_delivered' => $messages_delivered,'all_messages' => $all_messages, 'all_students' => $all_students, 'users' => $users]);
     }
     /**
      * Display a listing of the resource.
