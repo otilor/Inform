@@ -49,6 +49,19 @@
                     <div class="page-content-wrapper ">
 
                         <div class="container-fluid">
+                            @if ($current_user->role_id  == 0)
+                            <div class="container text-center">
+                                <h5>Inbox</h5>
+                            </div>
+                            
+                            <!-- This are all the personal messages... -->
+                            @foreach ($personal_messages as $personal_message)
+                            <div class="card mx-3 py-3">
+                                <code class="card-header"><h5>{{ $personal_message->created_at }}</h5></code>
+                                <p class="card-body">{{ $personal_message->message }}</p>
+                            </div>
+                            @endforeach
+                            @else
                             
                             <div class="row">
                                 <div class="col-12">
@@ -75,11 +88,11 @@
 
                             <!--Add students form-->
                             <div class="wrapper-page">
-
+                                
                                 <div class="card col-">
+
                                     <div class="card-body">
-                        
-                                       
+                                        
                                         <div class="col-xl-12 px-3 pb-3">
                                             @include('inc.messages')
                                         <form class="form-horizontal m-t-20" action="{{ route('personal_message_to_admin') }}" method="POST" name="personal_message_form">
@@ -101,7 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            @endif
                             
                             
             

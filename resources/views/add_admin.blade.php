@@ -8,7 +8,7 @@
 <div class="card px-3 py-3 mx-3" style="background-color: white">
     <div class="text-center card-body">
         <code style="color: black"><h5><span class="fas fa-exclamation-triangle"></span> You currently do not have the permissions to perform this action</h5></code>
-        <a href="/"><button class="btn btn-primary">Go home</button></a>
+        <a href="/"><button class="btn btn-primary waves-effect waves-light">Go home</button></a>
     </div>  
 </div>
 

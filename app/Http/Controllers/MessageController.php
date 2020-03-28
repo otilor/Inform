@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\User;
 use App\PersonalMessage;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,7 +31,15 @@ class MessageController extends Controller
      */
     public function create()
     {
-        return view('message_root');
+        // All personal messages to root
+        $personal_messages = PersonalMessage::all();
+
+        // This is the current user logged in
+        $current_user = User::where('id',Auth::id())->first();
+        
+         // This is the data to be passed to the view
+        $data = ['current_user' => $current_user, 'personal_messages' => $personal_messages];
+        return view('message_root', $data);
     }
 
     /**
