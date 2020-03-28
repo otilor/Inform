@@ -1,52 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>{{ config('app.name','Laravel') }} by Gabriel Akinyosoye</title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="Mannatthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+@extends('layouts.app')
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <!-- jvectormap -->
-        <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
-        <link href="assets/plugins/fullcalendar/vanillaCalendar.css" rel="stylesheet" type="text/css"  />
-        
-        <link href="assets/plugins/morris/morris.css" rel="stylesheet">
-
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
-    </head>
-
-
-    <body class="fixed-left">
-
-        <!-- Loader -->
-        <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
-
-        <!-- Begin page -->
-        <div id="wrapper">
-
-            <!-- ========== Left Sidebar Start ========== -->
-            @include('inc.sidebar')
-            <!-- Left Sidebar End -->
-
-            <!-- Start right Content here -->
-
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-
-                    <!-- Top Bar Start -->
-                    @include('inc.nav')
-                    <!-- Top Bar End -->
-
-                    <div class="page-content-wrapper ">
+@section('content')
+<div class="page-content-wrapper ">
 
                         <div class="container-fluid">
                             <!-- Only for root users -->
@@ -185,6 +140,4 @@
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
-
-    </body>
-</html>
+@endsection
