@@ -46,7 +46,15 @@
         $('#update_profile_button').hide();
         $('#gender_select').focus(function(e){
             $("#update_profile_button").show();
-        })
+        });
+        
+        // Bug detected - works for only the first element
+        $('.reply_form').hide()
+        $('#reply_button').click(function(){
+            
+            $('#reply_form').toggle(100);
+            
+        });
     })
     
 </script>

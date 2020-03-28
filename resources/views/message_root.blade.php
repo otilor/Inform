@@ -35,6 +35,14 @@
                                     <p>{{ $personal_message->message }}</p>
                                     <hr>
                                     <p>Sent by: {{ $personal_message->sent_by }}</p>
+                                    <input type="button" class="btn btn-success" value="Reply" id = "reply_button">
+                                    <br>
+                                    <div class = "reply_form" id="reply_form">
+                                        <textarea id = "reply_textarea" class="my-3"></textarea>
+                                        <br>
+                                        <code>Submit<span class="fab fa-telegram-plane"></span></code>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             @endforeach
@@ -116,7 +124,7 @@
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script>
-            document.persoanl_message_form.message.focus()
+            document.persoanl_message_form.message.focus();
         </script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -137,7 +145,6 @@
         <script src="assets/plugins/morris/morris.min.js"></script> 
          
         <script src="assets/pages/dashborad.js"></script>
-
         <!-- App js -->
         <script src="assets/js/app.js"></script>
 @endsection
