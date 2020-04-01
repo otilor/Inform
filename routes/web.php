@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'AdminController@index');
+Route::get('/', 'RootController@index');
 
 Auth::routes();
 
@@ -38,3 +38,10 @@ Route::post('/send', 'AdminController@send')->name('send_message');
 Route::get('/add', 'AdminController@create');
 
 Route::post('/add', 'AdminController@store')->name('add_student_phone_number');
+
+
+Route::get('/root', 'RootController@index')->name('root');
+
+Route::get('/lecturer', 'LecturerController@index')->name('lecturer');
+
+Route::get('/course_rep', 'Course_Rep_Controller@index')->name('course_rep');

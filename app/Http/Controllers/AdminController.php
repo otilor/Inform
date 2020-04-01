@@ -19,11 +19,13 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('root');
+        
     }
 
     public function index()
     {
+        // return "This is the Admin Controller";
         // This Code gets all the delivered message from all users instead of a specific user->This is a Bug!
         $messages_delivered = Message::where([['message_status',1],['user_id',Auth::user()->id]])->get();
         // Social-Distancing.
