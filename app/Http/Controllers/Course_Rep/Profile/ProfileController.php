@@ -18,7 +18,7 @@ class ProfileController extends Course_Rep_Controller
     {
         // return "Your profile goes here!";
         
-        $profile = $this->getProfile();
+        $profile = $this->get_profile();
         
         return view('course_rep.profile.index', compact('profile', $profile));
     }

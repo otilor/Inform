@@ -30,7 +30,7 @@ class StudentController extends Course_Rep_Controller
     public function create()
     {
         // This shows the form for adding students
-        $all_students = $this->getAllStudents();
+        $all_students = $this->get_all_students();
         // dd($all_students);
         return view('course_rep.student.add', compact('all_students', $all_students));
     }

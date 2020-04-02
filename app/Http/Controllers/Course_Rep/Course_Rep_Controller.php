@@ -17,7 +17,7 @@ class Course_Rep_Controller extends Controller
      * @return array $all_students;
      */
 
-    protected function getAllStudents()
+    protected function get_all_students()
     {
         $all_students = Student::all();
         return $all_students;
@@ -29,7 +29,7 @@ class Course_Rep_Controller extends Controller
      * 
      */
     
-    protected function getProfile()
+    protected function get_profile()
     {
         $id = Auth::id();
         $profile = User::where('id', $id)->first();
