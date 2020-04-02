@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
-    'App\\Course_Rep\\Student' => $baseDir . '/app/Course_Rep/Student.php',
+    'App\\Course_Rep\\Message\\Message' => $baseDir . '/app/Course_Rep/Message/Message.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Extensions\\AdminUserProvider' => $baseDir . '/app/Extensions/AdminUserProvider.php',
     'App\\Extensions\\AuthenticateAdmin' => $baseDir . '/app/Extensions/AuthenticateAdmin.php',
@@ -22,6 +22,8 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Course_Rep\\Course_Rep_Controller' => $baseDir . '/app/Http/Controllers/Course_Rep/Course_Rep_Controller.php',
+    'App\\Http\\Controllers\\Course_Rep\\Message\\MessageController' => $baseDir . '/app/Http/Controllers/Course_Rep/Message/MessageController.php',
+    'App\\Http\\Controllers\\Course_Rep\\Profile\\ProfileController' => $baseDir . '/app/Http/Controllers/Course_Rep/Profile/ProfileController.php',
     'App\\Http\\Controllers\\Course_Rep\\Student\\StudentController' => $baseDir . '/app/Http/Controllers/Course_Rep/Student/StudentController.php',
     'App\\Http\\Controllers\\Course_repStudentStudent' => $baseDir . '/app/Http/Controllers/Course_repStudentStudent.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',

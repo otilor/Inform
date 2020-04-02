@@ -39,6 +39,7 @@ Route::group(['prefix' => 'course_rep'], function () {
     Route::post('add', 'Course_Rep\Student\StudentController@store')->name('add_new_student');
     Route::get('profile', 'Course_Rep\Profile\ProfileController@index');
     Route::post('profile', 'Course_Rep\Profile\ProfileController@update',1)->name('update_profile');
+    Route::get('messages', 'Course_Rep\Message\MessageController@index');
 });
 
 

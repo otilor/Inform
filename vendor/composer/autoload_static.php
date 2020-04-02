@@ -472,7 +472,7 @@ class ComposerStaticInit8f2722a1553e361a27b53c00f4a7a9d9
     public static $classMap = array (
         'AdminSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Course_Rep\\Student' => __DIR__ . '/../..' . '/app/Course_Rep/Student.php',
+        'App\\Course_Rep\\Message\\Message' => __DIR__ . '/../..' . '/app/Course_Rep/Message/Message.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Extensions\\AdminUserProvider' => __DIR__ . '/../..' . '/app/Extensions/AdminUserProvider.php',
         'App\\Extensions\\AuthenticateAdmin' => __DIR__ . '/../..' . '/app/Extensions/AuthenticateAdmin.php',
@@ -486,6 +486,8 @@ class ComposerStaticInit8f2722a1553e361a27b53c00f4a7a9d9
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Course_Rep\\Course_Rep_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Course_Rep/Course_Rep_Controller.php',
+        'App\\Http\\Controllers\\Course_Rep\\Message\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Course_Rep/Message/MessageController.php',
+        'App\\Http\\Controllers\\Course_Rep\\Profile\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Course_Rep/Profile/ProfileController.php',
         'App\\Http\\Controllers\\Course_Rep\\Student\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Course_Rep/Student/StudentController.php',
         'App\\Http\\Controllers\\Course_repStudentStudent' => __DIR__ . '/../..' . '/app/Http/Controllers/Course_repStudentStudent.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
