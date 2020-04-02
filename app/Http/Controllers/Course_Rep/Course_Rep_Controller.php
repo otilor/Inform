@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Course_Rep;
 use App\Http\Controllers\Controller;
-use App\Course_Rep\Student;
+use App\Course_Rep\Student\Student;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
