@@ -14,10 +14,61 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'RootController@index');
+
+/*
+| ------------------------------------------------------
+| Redirects to current user role-privilege
+| This redirects back to current user route instead of "/"
+| "course_rep" is just some dummy route...
+| if the user is lecturer the middleware will redirect
+| So this specified route doesn't really matter
+
+*/
+Route::get('/', function (){
+    return redirect()->route('course_rep');
+});
+
+Route::get('/root', 'Root\RootController@index')->name('root');
+
+Route::get('/lecturer', 'Lecturer\LecturerController@index')->name('lecturer');
+
+Route::group(['prefix' => 'course_rep'], function () {
+    Route::get('/', 'Course_Rep\Course_Rep_Controller@index')->name('course_rep');
+    Route::get('student', 'Course_Rep\Student\StudentController@index');
+    Route::get('/add', 'Course_Rep\Student\StudentController@create');
+    Route::post('/add', 'Course_Rep\Student\StudentController@store')->name('add_new_student');
+});
+
+
 
 Auth::routes();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 Route::get('/message_root','MessageController@create');
 Route::post('/message_root','MessageController@store')->name('personal_message_to_admin');
 
@@ -38,10 +89,5 @@ Route::post('/send', 'AdminController@send')->name('send_message');
 Route::get('/add', 'AdminController@create');
 
 Route::post('/add', 'AdminController@store')->name('add_student_phone_number');
+*/
 
-
-Route::get('/root', 'RootController@index')->name('root');
-
-Route::get('/lecturer', 'LecturerController@index')->name('lecturer');
-
-Route::get('/course_rep', 'Course_Rep_Controller@index')->name('course_rep');

@@ -16,13 +16,13 @@
             <li class="list-inline-item dropdown notification-list hide-phone">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect text-white" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">
-                    <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
+                    <img src="{{ asset('assets/images/flags/us_flag.jpg') }}" class="ml-2" height="16" alt=""/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right language-switch">
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/italy_flag.jpg" alt="" height="16"/><span> Italian </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/french_flag.jpg" alt="" height="16"/><span> French </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt="" height="16"/><span> Spanish </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/russia_flag.jpg" alt="" height="16"/><span> Russian </span></a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('assets/images/flags/italy_flag.jpg') }}" alt="" height="16"/><span> Italian </span></a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('assets/images/flags/french_flag.jpg') }}" alt="" height="16"/><span> French </span></a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('assets/images/flags/spain_flag.jpg') }}" alt="" height="16"/><span> Spanish </span></a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('assets/images/flags/russia_flag.jpg') }}" alt="" height="16"/><span> Russian </span></a>
                 </div>
             </li>
             <li class="list-inline-item dropdown notification-list">
@@ -104,7 +104,7 @@
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                    <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
