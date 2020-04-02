@@ -15,7 +15,7 @@
     <div class="card px-3 py-3 mx-3" style="background-color: white">
         <div class="text-center card-body">
             <code style="color: black"><h5><span class="mdi mdi-information"></span> No messages here</h5></code>
-            <a href="/course_rep/send"><button class="btn btn-primary">Send one</button></a>
+            <a href="/course_rep/messages/create"><button class="btn btn-primary">Send one</button></a>
         </div>  
     </div>
     

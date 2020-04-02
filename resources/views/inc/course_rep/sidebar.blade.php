@@ -22,7 +22,7 @@
                 <li>
                     <a href="/course_rep" class="waves-effect">
                         <i class="mdi mdi-view-dashboard"></i>
-                        <span> Course Rep</span>
+                        <span> Dashboard</span>
                     </a>
                 </li>
 
@@ -50,7 +50,7 @@
                 </li>
 
                 <li>
-                    <a href="/course_rep/message_root" class="waves-effect">
+                    <a href="/course_rep/personal_message" class="waves-effect">
                         <i class="mdi mdi-message"></i>
                         <span> Message Root </span>
                     </a>
