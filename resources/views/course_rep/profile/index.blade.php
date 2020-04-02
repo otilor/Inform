@@ -25,7 +25,7 @@
                                 <div class="col-12">
                                     
                                     <div class="card-body py-3 px-12">
-                                        <form name = "update_profile_form" action="" method="POST">
+                                        <form name = "update_profile_form" action="{{ route('update_profile') }}" method="POST">
                                             <!--Form-->
                                             @include('inc.messages')
                                             @csrf

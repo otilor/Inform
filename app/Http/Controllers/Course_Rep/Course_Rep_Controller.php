@@ -17,7 +17,7 @@ class Course_Rep_Controller extends Controller
      * @return array $all_students;
      */
 
-    public function getAllStudents()
+    protected function getAllStudents()
     {
         $all_students = Student::all();
         return $all_students;
@@ -28,8 +28,10 @@ class Course_Rep_Controller extends Controller
      * This fetches the current user profile details
      * 
      */
-    public function getProfile($id)
+    
+    protected function getProfile()
     {
+        $id = Auth::id();
         $profile = User::where('id', $id)->first();
         return $profile;
     }

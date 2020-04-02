@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Course_Rep\Profile;
 use App\Http\Controllers\Course_Rep\Course_Rep_Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class ProfileController extends Course_Rep_Controller
 {
@@ -16,8 +17,8 @@ class ProfileController extends Course_Rep_Controller
     public function index()
     {
         // return "Your profile goes here!";
-        $id = Auth::id();
-        $profile = $this->getProfile($id);
+        
+        $profile = $this->getProfile();
         
         return view('course_rep.profile.index', compact('profile', $profile));
     }
@@ -72,9 +73,16 @@ class ProfileController extends Course_Rep_Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $data = $request->all();
+        User::where('id',Auth::id())->update([
+            'gender' => $data['gender'],
+        ]);
+
+        return back()->with('success', 'Updated successfully');
+
+        DB::update('update users set votes = 100 where name = ?', ['John']);
     }
 
     /**
