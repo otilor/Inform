@@ -35,8 +35,9 @@ Route::get('/lecturer', 'Lecturer\LecturerController@index')->name('lecturer');
 Route::group(['prefix' => 'course_rep'], function () {
     Route::get('/', 'Course_Rep\Course_Rep_Controller@index')->name('course_rep');
     Route::get('student', 'Course_Rep\Student\StudentController@index');
-    Route::get('/add', 'Course_Rep\Student\StudentController@create');
-    Route::post('/add', 'Course_Rep\Student\StudentController@store')->name('add_new_student');
+    Route::get('add', 'Course_Rep\Student\StudentController@create');
+    Route::post('add', 'Course_Rep\Student\StudentController@store')->name('add_new_student');
+    Route::get('profile', 'Course_Rep\Profile\ProfileController@index');
 });
 
 
