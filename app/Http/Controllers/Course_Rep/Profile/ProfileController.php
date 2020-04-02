@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Course_Rep\Profile;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Course_Rep\Course_Rep_Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ProfileController extends Controller
+class ProfileController extends Course_Rep_Controller
 {
     /**
      * Display course_rep profile
@@ -14,7 +15,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return "Your profile goes here!";
+        // return "Your profile goes here!";
+        $id = Auth::id();
+        $profile = $this->getProfile($id);
+        
+        return view('course_rep.profile.index', compact('profile', $profile));
     }
 
     /**

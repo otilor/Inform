@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Course_Rep;
 use App\Http\Controllers\Controller;
 use App\Course_Rep\Student;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +21,17 @@ class Course_Rep_Controller extends Controller
     {
         $all_students = Student::all();
         return $all_students;
+    }
+
+
+    /**
+     * This fetches the current user profile details
+     * 
+     */
+    public function getProfile($id)
+    {
+        $profile = User::where('id', $id)->first();
+        return $profile;
     }
     
     
