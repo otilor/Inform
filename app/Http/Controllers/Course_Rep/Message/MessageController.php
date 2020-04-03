@@ -53,53 +53,90 @@ class MessageController extends Course_Rep_Controller
         # do the next tablecode...
         // if that next table is successful then redirect else whatever      }
 
-        $message = $request->only('message');
+        $message = $request->get('message');
 
-
-    // TWILIO REST API
-    try {
-    // Your Account SID and Auth Token from twilio.com/console
-        $account_sid = 'AC45a2dad812bb662dc11a77335d38c14a';
-        $auth_token = '535569c8159f51d75d36ab91c92ffaf9';
-        // In production, these should be environment variables. E.g.:
-        // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
-
-        // A Twilio number you own with SMS capabilities
-        $twilio_number = "+12057934134";
+        $send_message = $this->messaging_api($message);
         
-        
-        $client = new Client($account_sid, $auth_token);
-        if($client->messages->create(
-            // Where to send a text message (your cell phone?)
-            
-        '+2348126950044',
-            array(
-                'from' => $twilio_number,
-                'body' => $message.'. Sent by '. Auth::user()->name
-            )
-        )){
-            // Set message status to 1 if it is sent then redirect back to admin page
-
-            Message::create([
-                'message' => $data['message'],
-                'message_status' => 1,
-                'user_id' => Auth::id(),
-            ]);
-
-            return back()->with('success','Message successfully sent');
+        if ($send_message['status'] === 0)
+        {
+            return back()->withErrors('Failed to send!' . ' - '. $send_message['error'])->withInput();   
         }
-            
-            
         
+
         
-    }catch (\Exception $e) {
-        
-        // will return user to previous screen with error message and input
-        
-        return back()->withError('Failed to send. Kindly check your connection and try again.')->withInput();
+        // return $send_message;
     }
 
-    }
+
+    /**
+     * The Messaging API - Twilio
+     * @param string $auth_id
+     * @param string $auth_token
+     * @param string $message
+     * @param \Illuminate\Http\Request 
+     */
+
+     public function messaging_api($message)
+     {
+        // $message_status = "";
+        
+        try {
+            // Your Account SID and Auth Token from twilio.com/console
+                $account_sid = 'AC45a2dad812bb662dc11a77335d38c14a';
+                $auth_token = '535569c8159f51d75d36ab91c92ffaf9';
+                // In production, these should be environment variables. E.g.:
+                // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
+        
+                // A Twilio number you own with SMS capabilities
+                $twilio_number = "+12057934134";
+                
+                // If the message is sent
+                $message_sent = false;
+                
+                
+                $client = new Client($account_sid, $auth_token);
+                if($client->messages->create(
+                    // Where to send a text message (your cell phone?)
+                    
+                '+23481269500424',
+                    array(
+                        'from' => $twilio_number,
+                        'body' => $message.'. Sent by '. Auth::user()->name
+                    )
+                )){
+                    // Set message status to 1 if it is sent then redirect back to admin page
+        
+                    Message::create([
+                        'message' => $data['message'],
+                        'message_status' => 1,
+                        'user_id' => Auth::id(),
+                    ]);
+        
+                    
+                    $message_status = ['status' => 1, 'message' => 'Successfully sent!'];
+                    return $message_status;
+                    
+                    
+                    
+                }
+                
+                    
+                    
+                
+                
+            }catch (\Exception $e) {
+                
+                
+                
+                // return json response
+
+                // return response()->json("Failed to send!");
+                
+                $response = ['status'=>0, 'message' => 'Failed to send!', 'error' => $e->getMessage()];
+                return $response;
+            }
+     }
+
 
     /**
      * Display the specified resource.
