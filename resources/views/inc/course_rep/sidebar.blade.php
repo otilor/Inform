@@ -57,7 +57,7 @@
                 </li>
 
                 <li>
-                    <a href="/course_rep/send" class="waves-effect">
+                    <a href="/course_rep/messages/create" class="waves-effect">
                         <i class=" mdi mdi-message-plus "></i>
                         <span> Send Message </span>
                     </a>
