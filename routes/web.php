@@ -32,7 +32,18 @@ Route::get('/root', 'Root\RootController@index')->name('root');
 
 Route::get('/lecturer', 'Lecturer\LecturerController@index')->name('lecturer');
 
+
+/*
+| -----------------------------------------------------------------------------
+| This handles the routes for the Course Representative
+| It also specifies Resource for some route like messages and personal_message
+|
+| -----------------------------------------------------------------------------
+*/
+
+
 Route::group(['prefix' => 'course_rep'], function () {
+
     Route::get('/', 'Course_Rep\Course_Rep_Controller@index')->name('course_rep');
     Route::get('student', 'Course_Rep\Student\StudentController@index');
     Route::get('add', 'Course_Rep\Student\StudentController@create');
@@ -40,14 +51,21 @@ Route::group(['prefix' => 'course_rep'], function () {
     Route::get('profile', 'Course_Rep\Profile\ProfileController@index');
     Route::post('profile', 'Course_Rep\Profile\ProfileController@update',1)->name('update_profile');
     Route::resource('messages', 'Course_Rep\Message\MessageController');
-    // Route::get('send', 'Course_Rep\Message\MessageController@create');
     Route::resource('personal_message','Course_Rep\Message\PersonalMessageController');
     Route::get('personal_message', 'Course_Rep\Message\PersonalMessageController@index')->name('personal_message');
     Route::post('personal_message/create', 'Course_Rep\Message\PersonalMessageController@store');
     Route::post('messages/create', 'Course_Rep\Message\MessageController@store')->name('send_message');
-    
+
 });
 
+
+/*
+| --------------------------------------
+| This specifies the route for Lecturers
+|             
+|                                       
+| --------------------------------------
+*/
 
 
 Auth::routes();

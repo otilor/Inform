@@ -15,11 +15,12 @@ class Course_Rep_Controller extends Controller
      * Returns all the students in the database
      * I wrote this method so as to avoid repeting the same process in other Controllers
      * @return array $all_students;
+     * @param Illuminate\Support\Facades\Auth
      */
 
     protected function get_all_students()
     {
-        $all_students = Student::all();
+        $all_students = Student::where('added_by',Auth::id())->get();
         return $all_students;
     }
 
