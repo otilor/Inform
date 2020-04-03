@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Course_Rep\Course_Rep_Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use App\Course_Rep\Student;
+use App\Course_Rep\Student\Student;
 use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Course_Rep_Controller

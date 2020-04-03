@@ -44,6 +44,7 @@ Route::group(['prefix' => 'course_rep'], function () {
     Route::resource('personal_message','Course_Rep\Message\PersonalMessageController');
     Route::get('personal_message', 'Course_Rep\Message\PersonalMessageController@index')->name('personal_message');
     Route::post('personal_message/create', 'Course_Rep\Message\PersonalMessageController@store');
+    Route::post('messages/create', 'Course_Rep\Message\MessageController@store')->name('send_message');
     
 });
 
