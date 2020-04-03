@@ -25,7 +25,7 @@
 
                             <!--Add students form-->
                             <div class="px-3 pb-3">
-                            <form class="form-horizontal m-t-20" action="{{ route('add_new_student') }}" method="POST">
+                            <form class="form-horizontal m-t-20" action="" method="POST">
                                     {{ csrf_field() }}
                                     @include('inc.messages')
                                                                         <!--Phone number with prefix-->
