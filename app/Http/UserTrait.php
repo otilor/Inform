@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
  * 
  * 
  */
-trait UserTrait
+trait UserTrait 
 {
     /**
      * Gets the data of the current user
@@ -19,5 +19,42 @@ trait UserTrait
     public function getUser()
     {
         return Auth::user();
+    }
+
+    /**
+     * Returns the current user id
+     * 
+     * @param \Illuminate\Support\Facades\Auth
+     * @return int $id
+     */
+    public function getUserId()
+    {
+        $id = $this->getUser()->id;
+        return $id;
+    }
+
+    /**
+     * Returns the user name
+     * 
+     * @param \Illuminate\Support\Facades\Auth
+     * @return string $name
+     */
+    public function getUserName()
+    {
+        $name = $this->getUser()->name;
+        return $name;
+    }
+
+    /**
+     * Returns the user email
+     * 
+     * @param \Illuminate\Support\Facades\Auth
+     * @param string $email
+     * @return string $email
+     */
+    public function getUserEmail()
+    {
+        $email = $this->getUser()->email;
+        return $email;
     }
 }

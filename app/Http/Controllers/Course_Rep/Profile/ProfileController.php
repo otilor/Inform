@@ -23,7 +23,7 @@ class ProfileController  implements ProfileInterface, UserInterface
     public function index()
     {
         // return "Your profile goes here!";
-        $id = $this->getUser()->id;
+        $id = $this->getUserId();
         $profile = $this->getProfile($id);
         
         return view('course_rep.profile.index', compact('profile'));
@@ -81,14 +81,19 @@ class ProfileController  implements ProfileInterface, UserInterface
      */
     public function update(Request $request)
     {
-        $id = $this->getUser()->id;
+        $id = $this->getUserId();
+
         $data = $request->all();
+
         $update_profile = $this->setProfile($id, $data);
         
         if (! is_null($update_profile)) {
             return back()->with('success', 'Updated successfully');
+
         }
-        return "Failed";
+
+        // If it is null
+        return response("Failed!");
 
         
     }

@@ -23,7 +23,7 @@ class LecturerController extends Controller
     public function index()
     {
         $quote = Inspiring::quote();
-        return view('lecturer.index', ['quote' => $quote]);
+        return view('lecturer.index', compact('quote'));
         
         
     }

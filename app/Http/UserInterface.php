@@ -11,6 +11,9 @@ interface UserInterface
      * @return string|null
      */
     public function getUser();
+    public function getUserId();
+    public function getUserName();
+    public function getUserEmail();
 
     
 
