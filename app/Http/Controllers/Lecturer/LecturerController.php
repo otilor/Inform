@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Lecturer;
 use Illuminate\Foundation\Inspiring;
 use App\Http\Controllers\Controller;
+use App\Http\UserInterface;
+use App\Http\Controllers\ProfileInterface;
+use App\Http\UserTrait;
 use App\Http\Controllers\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 
-class LecturerController extends Controller
+class LecturerController  extends Controller implements  ProfileInterface,UserInterface
 {
+    use UserTrait;
     use Profile;
     public function __construct()
     {
@@ -22,7 +26,7 @@ class LecturerController extends Controller
      */
     public function index()
     {
-        $quote = Inspiring::quote();
+        $quote = $this->getQuote();
         return view('lecturer.index', compact('quote'));
         
         

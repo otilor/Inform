@@ -14,6 +14,7 @@ interface UserInterface
     public function getUserId();
     public function getUserName();
     public function getUserEmail();
+    public function getQuote();
 
     
 

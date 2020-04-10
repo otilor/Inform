@@ -3,6 +3,7 @@
 
 namespace App\Http;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Inspiring;
 
 /**
  * Specfies all the methods belonging to users
@@ -56,5 +57,12 @@ trait UserTrait
     {
         $email = $this->getUser()->email;
         return $email;
+    }
+
+    public function getQuote()
+    {
+        // $quote = Inspiring::quote();
+        $quote = "Gabriel is an OOP pro!";
+        return $quote;
     }
 }
