@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use App\User;
 
-trait Profile{
+trait Profile {
 
     /**
      * This gets a certain user from the database

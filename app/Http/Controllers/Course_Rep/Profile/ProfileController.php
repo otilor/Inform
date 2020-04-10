@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Course_Rep\Profile;
 
-use App\Http\Controllers\Course_Rep\Course_Rep_Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileInterface;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Profile;
 use App\User;
 
-class ProfileController extends Course_Rep_Controller
+class ProfileController  implements ProfileInterface
 {
+    use Profile;
     /**
      * Display course_rep profile
      *
@@ -17,8 +20,8 @@ class ProfileController extends Course_Rep_Controller
     public function index()
     {
         // return "Your profile goes here!";
-        
-        $profile = $this->get_profile();
+        $id = Auth::id();
+        $profile = $this->getProfile($id);
         
         return view('course_rep.profile.index', compact('profile', $profile));
     }
