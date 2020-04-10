@@ -11,7 +11,6 @@ interface ProfileInterface{
 
     /**
      * Sets / Updates the profile of a particular user
-     * I love my wife,  very well
      * @param int $id
      * @param array $data
      */
@@ -19,7 +18,6 @@ interface ProfileInterface{
 
     /**
      * Deletes a profile from the database
-     * Feature not activated yet, though!
      * 
      * @param int $id
      * @return bool

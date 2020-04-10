@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Course_Rep\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileInterface;
+use App\Http\UserInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Profile;
 use App\User;
+use App\Http\UserTrait;
 
-class ProfileController  implements ProfileInterface
+class ProfileController  implements ProfileInterface, UserInterface
 {
     use Profile;
+    use UserTrait;
     /**
      * Display course_rep profile
      *
@@ -20,10 +23,10 @@ class ProfileController  implements ProfileInterface
     public function index()
     {
         // return "Your profile goes here!";
-        $id = Auth::id();
+        $id = $this->getUser()->id;
         $profile = $this->getProfile($id);
         
-        return view('course_rep.profile.index', compact('profile', $profile));
+        return view('course_rep.profile.index', compact('profile'));
     }
 
     /**
@@ -78,14 +81,16 @@ class ProfileController  implements ProfileInterface
      */
     public function update(Request $request)
     {
+        $id = $this->getUser()->id;
         $data = $request->all();
-        User::where('id',Auth::id())->update([
-            'gender' => $data['gender'],
-        ]);
+        $update_profile = $this->setProfile($id, $data);
+        
+        if (! is_null($update_profile)) {
+            return back()->with('success', 'Updated successfully');
+        }
+        return "Failed";
 
-        return back()->with('success', 'Updated successfully');
-
-        DB::update('update users set votes = 100 where name = ?', ['John']);
+        
     }
 
     /**

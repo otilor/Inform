@@ -26,6 +26,8 @@ trait Profile {
         $fetch_profile->gender = $data["gender"];
         $fetch_profile->save();
 
+        return true;
+
     }
 
 
