@@ -1,20 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Lecturer;
-
+namespace App\Http\Controllers\Lecturer\Profile;
+use App\Http\Controllers\ProfileController as Profile;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Profile;
 use Illuminate\Http\Request;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Auth;
 
-class LecturerController extends Controller
+class ProfileController implements ProfileInterface
 {
-    use Profile;
-    public function __construct()
-    {
-        $this->middleware('lecturer');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -22,8 +14,7 @@ class LecturerController extends Controller
      */
     public function index()
     {
-        return view('lecturer.index');
-        
+        //
     }
 
     /**
@@ -53,11 +44,9 @@ class LecturerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $user_id = Auth::id();
-        $profile = $this->getProfile($user_id);
-        return view('lecturer.profile', compact('profile'));
+        //
     }
 
     /**
@@ -78,12 +67,9 @@ class LecturerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $id = Auth::id();
-        $data = $request->all();
-        $update_profile = $this->setProfile($id, $request);
-        return back()->with('success', 'Updated successfully!');
+        //
     }
 
     /**

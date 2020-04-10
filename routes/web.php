@@ -30,7 +30,7 @@ Route::get('/', function (){
 
 Route::get('/root', 'Root\RootController@index')->name('root');
 
-Route::get('/lecturer', 'Lecturer\LecturerController@index')->name('lecturer');
+// Route::get('/lecturer', 'Lecturer\LecturerController@index')->name('lecturer');
 
 
 /*
@@ -66,7 +66,11 @@ Route::group(['prefix' => 'course_rep'], function () {
 |                                       
 | --------------------------------------
 */
-
+Route::group(['prefix' => 'lecturer'], function () {
+    Route::get('/', 'Lecturer\LecturerController@index')->name('lecturer');
+    Route::get('/profile', 'Lecturer\LecturerController@show');
+    Route::post('/profile', 'Lecturer\LecturerController@update')->name('update_lecturer_profile');
+});
 
 Auth::routes();
 
