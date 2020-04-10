@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Lecturer;
-
+use Illuminate\Foundation\Inspiring;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Profile;
 use Illuminate\Http\Request;
@@ -22,7 +22,9 @@ class LecturerController extends Controller
      */
     public function index()
     {
-        return view('lecturer.index');
+        $quote = Inspiring::quote();
+        return view('lecturer.index', ['quote' => $quote]);
+        
         
     }
 

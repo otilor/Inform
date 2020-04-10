@@ -6,11 +6,12 @@ trait Profile{
 
     /**
      * This gets a certain user from the database
+     * @return string|null
      */
     public function getProfile($id)
     {
         // Returns the collection
-        return User::findOrFail($id);
+        return User::findOrFail((int) $id);
     }
 
     /**
@@ -21,11 +22,10 @@ trait Profile{
      */
     public function setProfile($id, $data)
     {
-        return User::where('id', $id)->update([
-            'gender' => $data["gender"],
-        ]);
+        $fetch_profile = $this->getProfile($id);
+        $fetch_profile->gender = $data["gender"];
+        $fetch_profile->save();
 
-        
     }
 
 
