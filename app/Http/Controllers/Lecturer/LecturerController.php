@@ -62,8 +62,8 @@ class LecturerController  extends Controller implements  ProfileInterface,UserIn
     public function show()
     {
         $user_id = Auth::id();
-        $profile = $this->getProfile($user_id);
-        return view('lecturer.profile', compact('profile'));
+        $profile = $this->getProfile ( $user_id );
+        return view( 'lecturer.profile' , compact ( 'profile' ) );
     }
 
     /**
